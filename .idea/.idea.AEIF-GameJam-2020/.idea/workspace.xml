@@ -45,8 +45,10 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -82,7 +84,7 @@
       <workItem from="1605795847189" duration="91000" />
       <workItem from="1605795972791" duration="314000" />
       <workItem from="1605796348315" duration="106000" />
-      <workItem from="1605796615423" duration="29000" />
+      <workItem from="1605796615423" duration="519000" />
     </task>
     <servers />
   </component>
