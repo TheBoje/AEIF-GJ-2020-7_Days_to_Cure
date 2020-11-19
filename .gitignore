@@ -68,8 +68,7 @@ sysinfo.txt
 **/.idea/**/dynamic.xml
 
 # Rider
-.idea/
-
+.idea
 _UpgradeReport_Files/
 [Pp]ackages/
 
