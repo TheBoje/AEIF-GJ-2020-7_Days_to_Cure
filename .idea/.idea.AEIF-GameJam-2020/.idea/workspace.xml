@@ -20,8 +20,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c107467e-40bb-4d4a-9714-d0326ef8421e" name="Default Changelist" comment="">
+<<<<<<< Updated upstream
+      <change afterPath="$PROJECT_DIR$/Logs/Packages-Update.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AEIF-GameJam-2020/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AEIF-GameJam-2020/.idea/workspace.xml" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/TestVincent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/TestVincent.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.AEIF-GameJam-2020/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AEIF-GameJam-2020/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.AEIF-GameJam-2020/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AEIF-GameJam-2020/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.AEIF-GameJam-2020/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AEIF-GameJam-2020/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +48,11 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/Test.cs" />
+<<<<<<< Updated upstream
         <option value="$PROJECT_DIR$/.gitignore" />
+=======
+        <option value="$PROJECT_DIR$/Assets/Scripts/TestVincent.cs" />
+>>>>>>> Stashed changes
       </list>
     </option>
   </component>
@@ -55,20 +69,18 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+<<<<<<< Updated upstream
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.general" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.smartKeys_rider" />
+=======
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+>>>>>>> Stashed changes
     <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
-  <component name="RunAnythingCache">
-    <option name="myCommands">
-      <command value="git pull" />
-    </option>
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
@@ -101,8 +113,12 @@
       <workItem from="1605795847189" duration="91000" />
       <workItem from="1605795972791" duration="314000" />
       <workItem from="1605796348315" duration="106000" />
-      <workItem from="1605796615423" duration="2082000" />
-      <workItem from="1605806187321" duration="114000" />
+<<<<<<< Updated upstream
+      <workItem from="1605796615423" duration="1894000" />
+=======
+      <workItem from="1605796615423" duration="29000" />
+      <workItem from="1605797915839" duration="334000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>
@@ -139,25 +155,29 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="724" y="166" key="RiderGenerateDialog/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1605796396739" />
-    <state x="633" y="149" key="SettingsEditor" timestamp="1605806222189">
+<<<<<<< Updated upstream
+    <state x="633" y="149" key="SettingsEditor" timestamp="1605798204517">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="633" y="149" key="SettingsEditor/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1605806222189" />
+    <state x="633" y="149" key="SettingsEditor/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1605798204517" />
+=======
+    <state x="2304" y="243" key="SettingsEditor" timestamp="1605798259293">
+      <screen x="1920" y="104" width="1600" height="860" />
+    </state>
+    <state x="461" y="170" key="SettingsEditor/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1605796429241" />
+    <state x="2304" y="243" key="SettingsEditor/1920.104.1600.860/0.0.1920.1040@1920.104.1600.860" timestamp="1605798259293" />
+    <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog" timestamp="1605798203899">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1605798203899" />
+>>>>>>> Stashed changes
     <state x="832" y="369" key="cloudConfig.SelfSettingsDialog" timestamp="1605796029667">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="832" y="369" key="cloudConfig.SelfSettingsDialog/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1605796029667" />
-    <state x="92" y="92" width="1736" height="866" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1605806293491">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="92" y="92" width="1736" height="866" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1605806293491" />
     <state x="777" y="435" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605797869729">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="777" y="435" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1605797869729" />
-    <state x="616" y="243" key="run.anything.popup" timestamp="1605806248158">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="616" y="243" key="run.anything.popup/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1605806248158" />
   </component>
 </project>
