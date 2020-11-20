@@ -6,7 +6,10 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private const float GRAB_DISTANCE = 1.0f;
-
+    private const float HANDLE_POSITION_X = 0.5f;
+    private const float HANDLE_POSITION_Y = -0.5f;
+    private const float HANDLE_POSITION_Z = 0.7f;
+    
     private Transform eyes;
     private GameObject handleObject;
 
@@ -29,7 +32,8 @@ public class Player : MonoBehaviour
             if (Input.GetButtonDown("Interact"))
             {
                 handleObject = spotedObject.transform.gameObject;
-                handleObject.transform.parent = gameObject.transform;
+                handleObject.transform.parent = eyes;
+                handleObject.transform.localPosition = new Vector3(HANDLE_POSITION_X, HANDLE_POSITION_Y, HANDLE_POSITION_Z);
             }
         }
         else
