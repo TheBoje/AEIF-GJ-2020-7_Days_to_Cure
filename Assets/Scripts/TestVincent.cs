@@ -2,13 +2,13 @@
 using UnityEngine;
 public class TestVincent : MonoBehaviour
 {
-    private void Start()
+    void Start()
     {
-        throw new NotImplementedException();
+        Debug.Log("Test message pour Rider");
     }
 
     private void Update()
     {
-        throw new NotImplementedException();
+        Debug.Log("Update Test");
     }
 }
