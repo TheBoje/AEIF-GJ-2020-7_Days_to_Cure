@@ -28,7 +28,8 @@ public class Player : MonoBehaviour
             Debug.Log(spotedObject.transform.name);
             if (Input.GetButtonDown("Interact"))
             {
-                //handleObject
+                handleObject = spotedObject.transform.gameObject;
+                handleObject.transform.parent = gameObject.transform;
             }
         }
         else
