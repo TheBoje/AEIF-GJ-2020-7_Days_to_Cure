@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private const float GRAB_DISTANCE = 2.0f;
+    private const float GRAB_DISTANCE = 1.0f;
 
     private Transform eyes;
     private GameObject handleObject;
@@ -26,6 +26,10 @@ public class Player : MonoBehaviour
             Debug.DrawRay(eyes.position, eyes.TransformDirection(Vector3.forward) * spotedObject.distance,
                 Color.yellow);
             Debug.Log(spotedObject.transform.name);
+            if (Input.GetButtonDown("Interact"))
+            {
+                //handleObject
+            }
         }
         else
         {
