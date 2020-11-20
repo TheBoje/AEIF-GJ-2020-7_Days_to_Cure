@@ -504,6 +504,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: fiole
       objectReference: {fileID: 0}
+    - target: {fileID: 4881452781247194481, guid: 57beaf7178a01ec4e9bb0b7ee4536df6, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4881452781247194481, guid: 57beaf7178a01ec4e9bb0b7ee4536df6, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: a1b8fe39ae37fa84d82568c8ce43cd83, type: 2}
     - target: {fileID: 7612732847083604384, guid: 57beaf7178a01ec4e9bb0b7ee4536df6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -79.5
