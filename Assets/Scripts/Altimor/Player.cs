@@ -5,26 +5,32 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    private const float GRAB_DISTANCE = 2.0f;
+
+    private Transform eyes;
     private GameObject handleObject;
-    private GameObject selectedObject;
-    
+
     // Start is called before the first frame update
     void Start()
     {
         handleObject = null;
+        eyes = transform.GetChild(0).transform;
     }
 
-    private GameObject CastRay()
+    private void FixedUpdate()
     {
-        return Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out var hit) ? hit.transform.gameObject : null;
-    }
-
-    private void Update()
-    {
-        selectedObject = CastRay();
-        if (selectedObject)
+        RaycastHit spotedObject;
+        if (Physics.Raycast(eyes.position, eyes.TransformDirection(Vector3.forward), out spotedObject,
+            GRAB_DISTANCE))
         {
-            
+            Debug.DrawRay(eyes.position, eyes.TransformDirection(Vector3.forward) * spotedObject.distance,
+                Color.yellow);
+            Debug.Log(spotedObject.transform.name);
+        }
+        else
+        {
+            Debug.DrawRay(eyes.position, eyes.TransformDirection(Vector3.forward) * 1000, Color.white);
+            Debug.Log("Did not Hit");
         }
     }
 }
