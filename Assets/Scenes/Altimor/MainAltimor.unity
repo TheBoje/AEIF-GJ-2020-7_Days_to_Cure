@@ -647,6 +647,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: eprouvette
       objectReference: {fileID: 0}
+    - target: {fileID: 1760819399243506257, guid: c9f99dbbe8057954d94a389b6d5545f3, type: 3}
+      propertyPath: m_TagString
+      value: Recipient
+      objectReference: {fileID: 0}
     - target: {fileID: 4423117375209547867, guid: c9f99dbbe8057954d94a389b6d5545f3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -121.3
