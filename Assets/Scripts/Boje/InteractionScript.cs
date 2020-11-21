@@ -4,11 +4,12 @@ using UnityEngine.UI;
 
 public class InteractionScript : MonoBehaviour
 {
-    [SerializeField] private Image takeCanvas;
-    [SerializeField] private Image drinkCanvas;
-    [SerializeField] private Image openCanvas;
-    [SerializeField] private Image putCanvas;
-    [SerializeField] private Image addCanvas;
+    [SerializeField] private Canvas takeCanvas;
+    [SerializeField] private Canvas drinkCanvas;
+    [SerializeField] private Canvas openCanvas;
+    [SerializeField] private Canvas putCanvas;
+    [SerializeField] private Canvas addCanvas;
+    [SerializeField] private Canvas openCalendrier;
 
     public void clear_UI()
     {
@@ -17,12 +18,13 @@ public class InteractionScript : MonoBehaviour
         openCanvas.gameObject.SetActive(false);
         putCanvas.gameObject.SetActive(false);
         addCanvas.gameObject.SetActive(false);
+        openCalendrier.gameObject.SetActive(false);
     }
 
     public void draw_take(string itemName)
     {
         clear_UI();
-        takeCanvas.GetComponent<Transform>().Find("Action").GetComponent<Text>().text = $"Take {itemName}";
+        takeCanvas.GetComponent<Transform>().Find("TextCanvas").Find("Action").GetComponent<Text>().text = $"Prendre {itemName}";
         takeCanvas.gameObject.SetActive(true);
     }
     
@@ -55,6 +57,12 @@ public class InteractionScript : MonoBehaviour
     {
         clear_UI();
         addCanvas.gameObject.SetActive(true);
+    }
+
+    public void draw_open_calendrier()
+    {
+        clear_UI();
+        openCalendrier.gameObject.SetActive(true);
     }
 
     private void Start()
