@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
     public void GrabObject()
     {
         RaycastHit spotedObject;
-        if (!handleObject)
+        if (handleObject == null)
         {
             if (Physics.Raycast(eyes.position, eyes.TransformDirection(Vector3.forward), out spotedObject,
                 GRAB_DISTANCE))
@@ -47,6 +47,14 @@ public class Player : MonoBehaviour
                         rb = handleObject.GetComponent<RecipientBehaviour>();
                     }
                 }
+                else
+                {
+                    UIscript.clear_UI();
+                }
+            }
+            else
+            {
+                UIscript.clear_UI();
             }
         }
         else
@@ -75,11 +83,15 @@ public class Player : MonoBehaviour
                     }
                 }
             }
-            else
+            /*else
             {
                 UIscript.clear_UI();
-            }
+            }*/
         }
+        /*else
+        {
+            UIscript.clear_UI();
+        }*/
     }
 
     public void PourObject()
@@ -100,10 +112,10 @@ public class Player : MonoBehaviour
                     }    
                 }
             }
-            else
+            /*else
             {
                 UIscript.clear_UI();
-            }
+            }*/
         }
     }
     
