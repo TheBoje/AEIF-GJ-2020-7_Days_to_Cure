@@ -10,7 +10,9 @@ public class Player : MonoBehaviour
     private const float HANDLE_POSITION_Y = -0.2f;
     private const float HANDLE_POSITION_Z = 0.8f;
 
+    public GameObject gm;
     public Canvas UI;
+    private GameManager gmScript;
     private InteractionScript UIscript;
 
     private Vector3 handlePos;
@@ -25,6 +27,7 @@ public class Player : MonoBehaviour
         handleObject = null;
         handlePos = new Vector3(HANDLE_POSITION_X, HANDLE_POSITION_Y, HANDLE_POSITION_Z);
         UIscript = UI.GetComponent<InteractionScript>();
+        gmScript = gm.GetComponent<GameManager>();
     }
 
     public void GrabObject()
@@ -131,9 +134,25 @@ public class Player : MonoBehaviour
                     UIscript.draw_add();
                     if (Input.GetButtonDown("Fire2"))
                     {
-                        Debug.Log("Pour");
                         rb.Pouring(spotedObject.transform.gameObject);
                     }
+                }
+            }
+        }
+    }
+
+    public void Sleep()
+    {
+        RaycastHit spotedObject;
+        if (Physics.Raycast(eyes.position, eyes.TransformDirection(Vector3.forward), out spotedObject,
+            GRAB_DISTANCE))
+        {
+            if (spotedObject.transform.CompareTag("Bed"))
+            {
+                UIscript.draw_sleep();
+                if (Input.GetButtonDown("Interact"))
+                {
+                    gmScript.nextDay();
                 }
             }
         }
@@ -144,5 +163,6 @@ public class Player : MonoBehaviour
         GrabObject();
         DropObject();
         PourObject();
+        Sleep();
     }
 }
