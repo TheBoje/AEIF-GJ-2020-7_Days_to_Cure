@@ -28,4 +28,6 @@ public class RecipientBehaviour : MonoBehaviour
             bb.Fill(contentName, color, dangerosity);
         }
     }
+
+    public string ContentName => contentName;
 }
