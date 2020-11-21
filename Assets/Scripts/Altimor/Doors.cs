@@ -10,6 +10,7 @@ public class Doors : MonoBehaviour
      [SerializeField] private Transform rotationAxe;
      [SerializeField] private float angle;
      [SerializeField] private Vector3 axe;
+     private Boolean exist = true;
 
      private void Start()
      {
@@ -20,11 +21,16 @@ public class Doors : MonoBehaviour
      private void OnTriggerStay(Collider other)
      {
           Debug.Log("UI OPEN DRAWN");
-          UIscript.draw_open();
+          if (exist)
+          {
+               UIscript.draw_open();           
+          }
           if (Input.GetButtonDown("Interact"))
           {
                trigger.enabled = false;
+               exist = false;
                transform.RotateAround(rotationAxe.position, axe, angle);
+               UIscript.clear_UI();
           }
      }
 

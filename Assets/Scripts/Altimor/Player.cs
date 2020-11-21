@@ -160,9 +160,9 @@ public class Player : MonoBehaviour
     
     private void Update()
     {
-        GrabObject();
-        DropObject();
-        PourObject();
-        Sleep();
+        //GrabObject();
+        //DropObject();
+        //PourObject();
+        //Sleep();
     }
 }
