@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4104824200736772272}
+  - component: {fileID: 293367164040432191}
   m_Layer: 0
   m_Name: furnace
   m_TagString: Furniture
@@ -32,6 +33,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &293367164040432191
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3728016701420718602}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 40, y: 38.844482, z: 41.00001}
+  m_Center: {x: 0, y: 19.422241, z: 0}
 --- !u!1 &7330747579849670020
 GameObject:
   m_ObjectHideFlags: 0
@@ -43,7 +57,6 @@ GameObject:
   - component: {fileID: 724631072571218393}
   - component: {fileID: 1281837521658918699}
   - component: {fileID: 785594885160632929}
-  - component: {fileID: 6038962375206777142}
   m_Layer: 0
   m_Name: furnace
   m_TagString: Untagged
@@ -114,19 +127,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6038962375206777142
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7330747579849670020}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 40, y: 38.844482, z: 41.00001}
-  m_Center: {x: 0, y: 19.422241, z: 0}
 --- !u!1001 &4575088368424545019
 PrefabInstance:
   m_ObjectHideFlags: 0
