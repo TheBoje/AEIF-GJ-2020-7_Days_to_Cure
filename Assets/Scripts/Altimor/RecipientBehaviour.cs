@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class RecipientBehaviour : MonoBehaviour
@@ -9,12 +10,16 @@ public class RecipientBehaviour : MonoBehaviour
     [SerializeField] private String contentName;
     [SerializeField] private Color color;
     [SerializeField] private int dangerosity;
+    [SerializeField] private Material _baseMaterial;
     public GameObject content;
     
     private void Start()
     {
+        _baseMaterial = new Material(AssetDatabase.LoadAssetAtPath<Material>("Assets/Prefab/TransparentMat.mat"));
+        
         content.GetComponent<MeshRenderer>().enabled = hasContent;
-        content.GetComponent<Renderer>().material.SetColor("_Color", color);
+        _baseMaterial.color = color;
+        content.GetComponent<Renderer>().material = _baseMaterial;
     }
 
     public Boolean CanPour()

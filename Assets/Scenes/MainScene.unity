@@ -218,7 +218,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 860777366226984858, guid: c6a996626f8508c4cb615cd549878878, type: 3}
       propertyPath: color.a
-      value: 1
+      value: 0.7529412
       objectReference: {fileID: 0}
     - target: {fileID: 860777366226984858, guid: c6a996626f8508c4cb615cd549878878, type: 3}
       propertyPath: color.b
@@ -1973,6 +1973,18 @@ PrefabInstance:
       propertyPath: hasContent
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6612465276387549192, guid: 57beaf7178a01ec4e9bb0b7ee4536df6, type: 3}
+      propertyPath: contentName
+      value: ???
+      objectReference: {fileID: 0}
+    - target: {fileID: 6612465276387549192, guid: 57beaf7178a01ec4e9bb0b7ee4536df6, type: 3}
+      propertyPath: dangerosity
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6612465276387549192, guid: 57beaf7178a01ec4e9bb0b7ee4536df6, type: 3}
+      propertyPath: _baseMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: b85606515a60f7647b1914f44b5b68c0, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57beaf7178a01ec4e9bb0b7ee4536df6, type: 3}
 --- !u!1001 &1744904835
