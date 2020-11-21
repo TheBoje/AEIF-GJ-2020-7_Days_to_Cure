@@ -11,6 +11,7 @@ public class InteractionScript : MonoBehaviour
     [SerializeField] private Canvas addCanvas;
     [SerializeField] private Canvas openCalendrier;
     [SerializeField] private Canvas sleepCanvas;
+    [SerializeField] private Canvas petCanvas;
 
     public void clear_UI()
     {
@@ -21,6 +22,7 @@ public class InteractionScript : MonoBehaviour
         addCanvas.gameObject.SetActive(false);
         openCalendrier.gameObject.SetActive(false);
         sleepCanvas.gameObject.SetActive(false);
+        petCanvas.gameObject.SetActive(false);
     }
 
     public void draw_take(string itemName)
@@ -72,7 +74,12 @@ public class InteractionScript : MonoBehaviour
         clear_UI();
         sleepCanvas.gameObject.SetActive(true);
     }
-    
+
+    public void draw_pet()
+    {
+        clear_UI();
+        petCanvas.gameObject.SetActive(true);
+    }
     private void Start()
     {
         clear_UI();
