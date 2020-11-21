@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
             GRAB_DISTANCE))
         {
             //Debug.DrawRay(eyes.position, eyes.TransformDirection(Vector3.forward) * spotedObject.distance, Color.yellow);
-            Debug.Log(spotedObject.transform.name);
+            Debug.Log(spotedObject.transform.tag);
             if (Input.GetButtonDown("Interact") && spotedObject.transform.CompareTag("Recipient"))
             {
                 handleObject = spotedObject.transform.gameObject;
@@ -71,9 +71,10 @@ public class Player : MonoBehaviour
             if (Physics.Raycast(eyes.position, eyes.TransformDirection(Vector3.forward), out spotedObject,
                 GRAB_DISTANCE))
             {
-                if (Input.GetButtonDown("Fire2"))
+                if (Input.GetButtonDown("Fire2") && spotedObject.transform.CompareTag("Bowl"))
                 {
-                    rb.Pouring();
+                    Debug.Log("Pour");
+                    rb.Pouring(spotedObject.transform.gameObject);
                 }
             }
         }
