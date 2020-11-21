@@ -34,7 +34,7 @@ public class Player : MonoBehaviour
         {
             if (spotedObject.transform.CompareTag("Recipient"))
             {
-                UIscript.draw_take(spotedObject.transform.gameObject.GetComponent<RecipientBehaviour>().name);
+                UIscript.draw_take(spotedObject.transform.gameObject.GetComponent<RecipientBehaviour>().ContentName);
                 if (Input.GetButtonDown("Interact"))
                 {
                     handleObject = spotedObject.transform.gameObject;
