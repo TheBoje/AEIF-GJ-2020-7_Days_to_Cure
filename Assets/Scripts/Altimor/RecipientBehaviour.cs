@@ -17,12 +17,16 @@ public class RecipientBehaviour : MonoBehaviour
         content.GetComponent<Renderer>().material.SetColor("_Color", color);
     }
 
+    public Boolean CanPour()
+    {
+        return hasContent;
+    }
+    
     public void Pouring(GameObject target)
     {
         BowlBehaviour bb = target.GetComponent<BowlBehaviour>();
         if (!bb.IsFull() && hasContent)
         {
-            //Debug.Log("Pourring ...");
             hasContent = false;
             content.GetComponent<MeshRenderer>().enabled = hasContent;
             bb.Fill(contentName, color, dangerosity);

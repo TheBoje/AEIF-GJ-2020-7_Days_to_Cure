@@ -26,7 +26,6 @@ public class MovementScript : MonoBehaviour
     {
         if (!_isCrouch)
         {
-            Debug.Log("Crouching");
             speed /= 2;
             var localPosition = _cameraTransform.localPosition;
             localPosition = new Vector3(localPosition.x, 0f, localPosition.z);
@@ -35,7 +34,6 @@ public class MovementScript : MonoBehaviour
         }
         else
         {
-            Debug.Log("Standing up");
             var localPosition = _cameraTransform.localPosition;
             localPosition = new Vector3(localPosition.x, 0.81f, localPosition.z);
             _cameraTransform.localPosition = localPosition;

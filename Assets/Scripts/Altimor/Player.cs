@@ -49,10 +49,12 @@ public class Player : MonoBehaviour
                         handleObject.transform.localPosition = handlePos;
                         handleObject.transform.rotation = Quaternion.identity;
                         rb = handleObject.GetComponent<RecipientBehaviour>();
+                        UIscript.clear_take();
                     }
                 }
                 else if (spotedObject.transform.CompareTag("Calendrier"))
                 {
+                    UIscript.clear_take();
                     if (!_calendrierOuvert)
                     {
                         UIscript.draw_open_calendrier();
@@ -70,11 +72,13 @@ public class Player : MonoBehaviour
                         {
                             transform.Find("UI").GetComponent<CalendrierManager>().CacheCalendrier();
                             _calendrierOuvert = false;
+                            UIscript.clear_open_calendrier();
                         }
                     }
                 }
                 else
                 {
+                    UIscript.clear_take();
                     UIscript.clear_open_calendrier();
                 }
             }
@@ -82,20 +86,24 @@ public class Player : MonoBehaviour
             {
                 transform.Find("UI").GetComponent<CalendrierManager>().CacheCalendrier();
                 _calendrierOuvert = false;
+                UIscript.clear_open_calendrier();
+                UIscript.clear_take();
             }
             else
             {
-                UIscript.clear_UI();
+                UIscript.clear_open_calendrier();
+                UIscript.clear_take();
             }
         }
         else if (_calendrierOuvert && Input.GetButtonDown("Interact"))
         {
             transform.Find("UI").GetComponent<CalendrierManager>().CacheCalendrier();
             _calendrierOuvert = false;
+            UIscript.clear_open_calendrier();
         }
         else
         {
-            UIscript.clear_UI();
+            UIscript.clear_open_calendrier();
         }
     }
 
@@ -116,8 +124,17 @@ public class Player : MonoBehaviour
                         handleObject.transform.position = spotedObject.point;
                         handleObject.transform.rotation = Quaternion.identity;
                         handleObject = null;
+                        UIscript.clear_put();
                     }
                 }
+                else
+                {
+                    UIscript.clear_put();
+                }
+            }
+            else
+            {
+                UIscript.clear_put();
             }
         }
     }
@@ -132,13 +149,32 @@ public class Player : MonoBehaviour
             {
                 if (spotedObject.transform.CompareTag("Bowl"))
                 {
-                    UIscript.draw_add();
-                    if (Input.GetButtonDown("Fire2"))
+                    if (rb.CanPour())
                     {
-                        rb.Pouring(spotedObject.transform.gameObject);
+                        UIscript.draw_add();
+                        if (Input.GetButtonDown("Fire2"))
+                        {
+                            rb.Pouring(spotedObject.transform.gameObject);
+                        }
+                    }
+                    else
+                    {
+                        UIscript.clear_add();
                     }
                 }
+                else
+                {
+                    UIscript.clear_add();
+                }
             }
+            else
+            {
+                UIscript.clear_add();
+            }
+        }
+        else
+        {
+            UIscript.clear_add();
         }
     }
 
@@ -156,6 +192,14 @@ public class Player : MonoBehaviour
                     gmScript.nextDay();
                 }
             }
+            else
+            {
+                UIscript.clear_sleep();
+            }
+        }
+        else
+        {
+            UIscript.clear_sleep();
         }
     }
 
@@ -171,11 +215,20 @@ public class Player : MonoBehaviour
                 if (Input.GetButtonDown("Interact"))
                 {
                     spotedObject.transform.gameObject.GetComponent<Cat>().Pet();
+                    UIscript.clear_pet();
                 }
             }
+            else
+            {
+                UIscript.clear_pet();
+            }
+        }
+        else
+        {
+            UIscript.clear_pet();
         }
     }
-    
+
     private void Update()
     {
         GrabObject();

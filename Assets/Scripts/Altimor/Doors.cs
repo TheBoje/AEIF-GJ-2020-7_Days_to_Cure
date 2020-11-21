@@ -20,7 +20,6 @@ public class Doors : MonoBehaviour
 
      private void OnTriggerStay(Collider other)
      {
-          Debug.Log("UI OPEN DRAWN");
           if (exist)
           {
                UIscript.draw_open();           
