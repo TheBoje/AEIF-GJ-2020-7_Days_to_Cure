@@ -64,6 +64,11 @@ public class GameManager : MonoBehaviour
             text.text += "- " + key.Key + " : " + key.Value + "\n";
         }
     }
+
+    public void nextDay()
+    {
+        
+    }
     
     
 }
