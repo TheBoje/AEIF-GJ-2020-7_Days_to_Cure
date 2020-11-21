@@ -35,7 +35,7 @@ public class InteractionScript : MonoBehaviour
     public void draw_take()
     {
         clear_UI();
-        takeCanvas.GetComponent<Transform>().Find("Action").GetComponent<Text>().text = $"Take";
+        takeCanvas.GetComponent<Transform>().Find("Action").GetComponent<Text>().text = $"Prendre";
         takeCanvas.gameObject.SetActive(true);
     }
 
@@ -48,6 +48,7 @@ public class InteractionScript : MonoBehaviour
     public void draw_open()
     {
         clear_UI();
+        Debug.Log("opening please");
         openCanvas.gameObject.SetActive(true);
     }
 
