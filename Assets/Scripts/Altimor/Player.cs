@@ -157,6 +157,23 @@ public class Player : MonoBehaviour
             }
         }
     }
+
+    public void Pet()
+    {
+        RaycastHit spotedObject;
+        if (Physics.Raycast(eyes.position, eyes.TransformDirection(Vector3.forward), out spotedObject,
+            GRAB_DISTANCE))
+        {
+            if (spotedObject.transform.CompareTag("Pet"))
+            {
+                UIscript.draw_pet();
+                if (Input.GetButtonDown("Interact"))
+                {
+                    spotedObject.transform.gameObject.GetComponent<Cat>().Pet();
+                }
+            }
+        }
+    }
     
     private void Update()
     {
@@ -164,5 +181,6 @@ public class Player : MonoBehaviour
         DropObject();
         PourObject();
         Sleep();
+        Pet();
     }
 }
