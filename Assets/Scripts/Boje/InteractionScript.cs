@@ -25,6 +25,13 @@ public class InteractionScript : MonoBehaviour
         takeCanvas.GetComponent<Transform>().Find("Action").GetComponent<Text>().text = $"Take {itemName}";
         takeCanvas.gameObject.SetActive(true);
     }
+    
+    public void draw_take()
+    {
+        clear_UI();
+        takeCanvas.GetComponent<Transform>().Find("Action").GetComponent<Text>().text = $"Take";
+        takeCanvas.gameObject.SetActive(true);
+    }
 
     public void draw_drink()
     {
