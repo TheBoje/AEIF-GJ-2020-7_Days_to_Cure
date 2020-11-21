@@ -7,6 +7,7 @@ TagManager:
   - Recipient
   - Furniture
   - Bowl
+  - Calendrier
   layers:
   - Default
   - TransparentFX

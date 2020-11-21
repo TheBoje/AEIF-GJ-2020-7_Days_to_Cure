@@ -6,17 +6,18 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private const float GRAB_DISTANCE = 1.5f;
-    private const float HANDLE_POSITION_X = 0.5f;
-    private const float HANDLE_POSITION_Y = -0.5f;
-    private const float HANDLE_POSITION_Z = 0.7f;
+    private const float HANDLE_POSITION_X = 0.4f;
+    private const float HANDLE_POSITION_Y = -0.2f;
+    private const float HANDLE_POSITION_Z = 0.8f;
 
     public Canvas UI;
-    private  InteractionScript UIscript;
-    
+    private InteractionScript UIscript;
+
     private Vector3 handlePos;
     public Transform eyes;
     private GameObject handleObject;
     private RecipientBehaviour rb;
+    private Boolean _calendrierOuvert = false;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +30,7 @@ public class Player : MonoBehaviour
     public void GrabObject()
     {
         RaycastHit spotedObject;
-        if (handleObject == null)
+        if (handleObject == null && !_calendrierOuvert)
         {
             if (Physics.Raycast(eyes.position, eyes.TransformDirection(Vector3.forward), out spotedObject,
                 GRAB_DISTANCE))
@@ -47,15 +48,46 @@ public class Player : MonoBehaviour
                         rb = handleObject.GetComponent<RecipientBehaviour>();
                     }
                 }
+                else if (spotedObject.transform.CompareTag("Calendrier"))
+                {
+                    if (!_calendrierOuvert)
+                    {
+                        UIscript.draw_open_calendrier();
+                        if (Input.GetButtonDown("Interact"))
+                        {
+                            transform.Find("UI").GetComponent<CalendrierManager>()
+                                .AfficheCalendrier();
+                            _calendrierOuvert = true;
+                        }
+                    }
+                    else
+                    {
+                        if (Input.GetButtonDown("Interact"))
+                        {
+                            transform.Find("UI").GetComponent<CalendrierManager>().CacheCalendrier();
+                            _calendrierOuvert = false;
+                        }
+                    }
+                }
                 else
                 {
                     UIscript.clear_UI();
                 }
             }
+            else if (_calendrierOuvert && Input.GetButtonDown("Interact"))
+            {
+                transform.Find("UI").GetComponent<CalendrierManager>().CacheCalendrier();
+                _calendrierOuvert = false;
+            }
             else
             {
                 UIscript.clear_UI();
             }
+        }
+        else if (_calendrierOuvert && Input.GetButtonDown("Interact"))
+        {
+            transform.Find("UI").GetComponent<CalendrierManager>().CacheCalendrier();
+            _calendrierOuvert = false;
         }
         else
         {
@@ -83,15 +115,7 @@ public class Player : MonoBehaviour
                     }
                 }
             }
-            /*else
-            {
-                UIscript.clear_UI();
-            }*/
         }
-        /*else
-        {
-            UIscript.clear_UI();
-        }*/
     }
 
     public void PourObject()
@@ -109,9 +133,10 @@ public class Player : MonoBehaviour
                     {
                         Debug.Log("Pour");
                         rb.Pouring(spotedObject.transform.gameObject);
-                    }    
+                    }
                 }
             }
+
             /*else
             {
                 UIscript.clear_UI();
@@ -119,7 +144,7 @@ public class Player : MonoBehaviour
         }
     }
     
-    private void FixedUpdate()
+    private void Update()
     {
         GrabObject();
         DropObject();
