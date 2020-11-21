@@ -9,6 +9,9 @@ public class Player : MonoBehaviour
     private const float HANDLE_POSITION_X = 0.5f;
     private const float HANDLE_POSITION_Y = -0.5f;
     private const float HANDLE_POSITION_Z = 0.7f;
+
+    public Canvas UI;
+    private  InteractionScript UIscript;
     
     private Vector3 handlePos;
     public Transform eyes;
@@ -20,6 +23,7 @@ public class Player : MonoBehaviour
     {
         handleObject = null;
         handlePos = new Vector3(HANDLE_POSITION_X, HANDLE_POSITION_Y, HANDLE_POSITION_Z);
+        UIscript = UI.GetComponent<InteractionScript>();
     }
 
     public void GrabObject()
@@ -28,19 +32,22 @@ public class Player : MonoBehaviour
         if (Physics.Raycast(eyes.position, eyes.TransformDirection(Vector3.forward), out spotedObject,
             GRAB_DISTANCE))
         {
-            //Debug.DrawRay(eyes.position, eyes.TransformDirection(Vector3.forward) * spotedObject.distance, Color.yellow);
-            Debug.Log(spotedObject.transform.tag);
-            if (Input.GetButtonDown("Interact") && spotedObject.transform.CompareTag("Recipient"))
+            if (spotedObject.transform.CompareTag("Recipient"))
             {
-                handleObject = spotedObject.transform.gameObject;
-                handleObject.transform.parent = eyes;
-                handleObject.transform.localPosition = handlePos;
-                rb = handleObject.GetComponent<RecipientBehaviour>();
+                UIscript.draw_take(spotedObject.transform.gameObject.GetComponent<RecipientBehaviour>().name);
+                if (Input.GetButtonDown("Interact"))
+                {
+                    handleObject = spotedObject.transform.gameObject;
+                    handleObject.transform.parent = eyes;
+                    handleObject.transform.localPosition = handlePos;
+                    handleObject.transform.rotation = Quaternion.identity;
+                    rb = handleObject.GetComponent<RecipientBehaviour>();
+                }
             }
         }
         else
         {
-            Debug.DrawRay(eyes.position, eyes.TransformDirection(Vector3.forward) * 1000, Color.white);
+            UIscript.clear_UI();
         }
     }
 
@@ -52,13 +59,21 @@ public class Player : MonoBehaviour
             if (Physics.Raycast(eyes.position, eyes.TransformDirection(Vector3.forward), out spotedObject,
                 GRAB_DISTANCE))
             {
-                if (Input.GetButtonDown("Fire1") && spotedObject.transform.CompareTag("Furniture"))
+                if (spotedObject.transform.CompareTag("Furniture"))
                 {
-                    handleObject.transform.parent = null;
-                    handleObject.transform.position = spotedObject.point;
-                    handleObject.transform.rotation = Quaternion.identity;
-                    handleObject = null;
+                    UIscript.draw_put();
+                    if (Input.GetButtonDown("Fire1"))
+                    {
+                        handleObject.transform.parent = null;
+                        handleObject.transform.position = spotedObject.point;
+                        handleObject.transform.rotation = Quaternion.identity;
+                        handleObject = null;
+                    }
                 }
+            }
+            else
+            {
+                UIscript.clear_UI();
             }
         }
     }
@@ -71,11 +86,19 @@ public class Player : MonoBehaviour
             if (Physics.Raycast(eyes.position, eyes.TransformDirection(Vector3.forward), out spotedObject,
                 GRAB_DISTANCE))
             {
-                if (Input.GetButtonDown("Fire2") && spotedObject.transform.CompareTag("Bowl"))
+                if (spotedObject.transform.CompareTag("Bowl"))
                 {
-                    Debug.Log("Pour");
-                    rb.Pouring(spotedObject.transform.gameObject);
+                    UIscript.draw_add();
+                    if (Input.GetButtonDown("Fire2"))
+                    {
+                        Debug.Log("Pour");
+                        rb.Pouring(spotedObject.transform.gameObject);
+                    }    
                 }
+            }
+            else
+            {
+                UIscript.clear_UI();
             }
         }
     }
