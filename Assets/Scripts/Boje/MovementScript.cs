@@ -8,6 +8,8 @@ public class MovementScript : MonoBehaviour
     public float speed = 4f;
     public new Transform transform;
     public CharacterController characterController;
+    private Boolean _isCrouch = false;
+    private Transform _cameraTransform;
 
     void FixedUpdate()
     {
@@ -22,7 +24,24 @@ public class MovementScript : MonoBehaviour
 
     private void Crouch()
     {
-        
+        if (!_isCrouch)
+        {
+            Debug.Log("Crouching");
+            speed /= 2;
+            var localPosition = _cameraTransform.localPosition;
+            localPosition = new Vector3(localPosition.x, 0f, localPosition.z);
+            _cameraTransform.localPosition = localPosition;
+            _isCrouch = true;
+        }
+        else
+        {
+            Debug.Log("Standing up");
+            var localPosition = _cameraTransform.localPosition;
+            localPosition = new Vector3(localPosition.x, 0.81f, localPosition.z);
+            _cameraTransform.localPosition = localPosition;
+            speed *= 2;
+            _isCrouch = false;
+        }
     }
 
     private void Update()
@@ -31,5 +50,10 @@ public class MovementScript : MonoBehaviour
         {
             Crouch();
         }
+    }
+
+    private void Start()
+    {
+        _cameraTransform = transform.Find("Camera");
     }
 }
