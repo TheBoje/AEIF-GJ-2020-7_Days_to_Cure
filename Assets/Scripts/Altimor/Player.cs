@@ -136,11 +136,6 @@ public class Player : MonoBehaviour
                     }
                 }
             }
-
-            /*else
-            {
-                UIscript.clear_UI();
-            }*/
         }
     }
     
