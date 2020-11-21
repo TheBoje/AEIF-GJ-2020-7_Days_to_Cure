@@ -9,17 +9,21 @@ public class CameraScript : MonoBehaviour
     
     private float maxYAngle = 80f;
     
-    private int FPSTarget = 60;
-    private Vector2 _currentRotation;
+    private int FPSTarget = 100;
     public new Transform transform;
+    public Transform playerTransform;
+    private float _xRotation = 0f;
 
     private void FixedUpdate()
     {
-        _currentRotation.x += Input.GetAxis("Mouse X") * mouseSensitivity * 50f * Time.deltaTime;
-        _currentRotation.y -= Input.GetAxis("Mouse Y") * mouseSensitivity * 50f * Time.deltaTime;
-        _currentRotation.x = Mathf.Repeat(_currentRotation.x, 360);
-        _currentRotation.y = Mathf.Clamp(_currentRotation.y, -maxYAngle, maxYAngle);
-        transform.rotation = Quaternion.Euler(_currentRotation.y, _currentRotation.x, 0);
+        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * 50f * Time.deltaTime;
+        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * 50f * Time.deltaTime;
+        
+        _xRotation -= mouseY;
+        _xRotation = Mathf.Clamp(_xRotation, -maxYAngle, maxYAngle);
+        
+        transform.localRotation = Quaternion.Euler(_xRotation, 0f, 0f);
+        playerTransform.Rotate(Vector3.up * mouseX);
     }
 
     private void Awake()
