@@ -8,6 +8,7 @@ TagManager:
   - Furniture
   - Bowl
   - Calendrier
+  - Bed
   layers:
   - Default
   - TransparentFX
