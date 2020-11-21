@@ -19,30 +19,50 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         ingredients = new Dictionary<string, string>();
+        solution = new Dictionary<string, string>();
         
         ingredients.Add("Test1", "Mmmmmh le bon test");
         ingredients.Add("Test2", "Encore du test ?");
         ingredients.Add("Test3", "Relou la en fait");
+        ingredients.Add("Test4", "Relou la en fait");
+        ingredients.Add("Test5", "Relou la en fait");
+        ingredients.Add("Test6", "Relou la en fait");
+        ingredients.Add("Test7", "Relou la en fait");
+        ingredients.Add("Test8", "Relou la en fait");
+        
+        ChooseAntidote();
+        
+        /*solution.Add("Test1", "Mmmmmh le bon test");
+        solution.Add("Test2", "Encore du test ?");
+        solution.Add("Test3", "Relou la en fait");
+        */
+        
+        printOnTvScreen();
     }
 
-    public Dictionary<String, String> ChooseAntidote()
+    public void ChooseAntidote()
     {
-        Dictionary<string, string> dic = new Dictionary<string, string>();
-        
         Random random = new Random();
+        List<int> nbrs = new List<int>();
 
         for (int i = 0; i < nbIngredients; i++)
         {
             int rand = random.Next(ingredients.Count);
-            dic.Add(ingredients.ElementAt(rand).Key, ingredients.ElementAt(rand).Value);
+            while (nbrs.Contains(rand))
+            {
+                rand = random.Next(ingredients.Count);
+            }
+            solution.Add(ingredients.ElementAt(rand).Key, ingredients.ElementAt(rand).Value);
         }
-
-        return dic;
     }
 
     public void printOnTvScreen()
     {
-        
+        text.text = "";
+        foreach (var key in solution)
+        {
+            text.text += "- " + key.Key + " : " + key.Value + "\n";
+        }
     }
     
     
