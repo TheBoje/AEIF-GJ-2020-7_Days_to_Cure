@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     private Vector3 handlePos;
     private Transform eyes;
     private GameObject handleObject;
+    private RecipientBehaviour rb;
 
     // Start is called before the first frame update
     void Start()
@@ -28,13 +29,14 @@ public class Player : MonoBehaviour
         if (Physics.Raycast(eyes.position, eyes.TransformDirection(Vector3.forward), out spotedObject,
             GRAB_DISTANCE))
         {
-            Debug.DrawRay(eyes.position, eyes.TransformDirection(Vector3.forward) * spotedObject.distance, Color.yellow);
-            Debug.Log(spotedObject.transform.tag);
+            //Debug.DrawRay(eyes.position, eyes.TransformDirection(Vector3.forward) * spotedObject.distance, Color.yellow);
+            Debug.Log(spotedObject.transform.name);
             if (Input.GetButtonDown("Interact") && spotedObject.transform.CompareTag("Recipient"))
             {
                 handleObject = spotedObject.transform.gameObject;
                 handleObject.transform.parent = eyes;
                 handleObject.transform.localPosition = handlePos;
+                rb = handleObject.GetComponent<RecipientBehaviour>();
             }
         }
         else
@@ -61,10 +63,27 @@ public class Player : MonoBehaviour
             }
         }
     }
+
+    public void PourObject()
+    {
+        if (handleObject)
+        {
+            RaycastHit spotedObject;
+            if (Physics.Raycast(eyes.position, eyes.TransformDirection(Vector3.forward), out spotedObject,
+                GRAB_DISTANCE))
+            {
+                if (Input.GetButtonDown("Fire2"))
+                {
+                    rb.Pouring();
+                }
+            }
+        }
+    }
     
     private void FixedUpdate()
     {
         GrabObject();
         DropObject();
+        PourObject();
     }
 }
