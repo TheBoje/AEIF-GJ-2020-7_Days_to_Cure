@@ -193,7 +193,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1936468805143952093}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.03, y: 0.03, z: 0.03}
   m_Children:
@@ -214,6 +214,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e626b49033f8ec44bdc86af113625b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  text: {fileID: 1496220228356684998}
+  player: {fileID: 0}
+  bowl: {fileID: 0}
 --- !u!1 &3821122018386200128
 GameObject:
   m_ObjectHideFlags: 0
@@ -273,7 +276,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8469494145858465668, guid: abc043c43bfc5de4bbbbe95f1c241f24, type: 3}
+  - {fileID: 2100000, guid: 1e75f639baf197d4081160b58255eead, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

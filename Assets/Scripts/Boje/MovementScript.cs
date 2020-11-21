@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEditorInternal;
+using UnityEngine;
 
 public class MovementScript : MonoBehaviour
 {
@@ -16,5 +18,18 @@ public class MovementScript : MonoBehaviour
         _move.y = 0;
         
         characterController.Move(_move * Time.deltaTime);
+    }
+
+    private void Crouch()
+    {
+        
+    }
+
+    private void Update()
+    {
+        if (Input.GetButtonDown("Crouch"))
+        {
+            Crouch();
+        }
     }
 }
