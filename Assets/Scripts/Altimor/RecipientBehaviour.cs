@@ -22,10 +22,10 @@ public class RecipientBehaviour : MonoBehaviour
         BowlBehaviour bb = target.GetComponent<BowlBehaviour>();
         if (!bb.IsFull() && hasContent)
         {
-            Debug.Log("Pourring ...");
+            //Debug.Log("Pourring ...");
             hasContent = false;
             content.GetComponent<MeshRenderer>().enabled = hasContent;
-            bb.Fill(name, color, dangerosity);
+            bb.Fill(contentName, color, dangerosity);
         }
     }
 }
