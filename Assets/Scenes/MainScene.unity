@@ -436,6 +436,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 764316528}
     m_Modifications:
+    - target: {fileID: 2932047605323944592, guid: 408a79ae274ede64280544d522d77015, type: 3}
+      propertyPath: m_Size.y
+      value: 47.751144
+      objectReference: {fileID: 0}
+    - target: {fileID: 2932047605323944592, guid: 408a79ae274ede64280544d522d77015, type: 3}
+      propertyPath: m_Size.z
+      value: 38.32829
+      objectReference: {fileID: 0}
+    - target: {fileID: 2932047605323944592, guid: 408a79ae274ede64280544d522d77015, type: 3}
+      propertyPath: m_Center.x
+      value: -0.35871267
+      objectReference: {fileID: 0}
+    - target: {fileID: 2932047605323944592, guid: 408a79ae274ede64280544d522d77015, type: 3}
+      propertyPath: m_Center.y
+      value: 23.375572
+      objectReference: {fileID: 0}
+    - target: {fileID: 2932047605323944592, guid: 408a79ae274ede64280544d522d77015, type: 3}
+      propertyPath: m_Center.z
+      value: 17.859402
+      objectReference: {fileID: 0}
     - target: {fileID: 3728016701420718602, guid: 408a79ae274ede64280544d522d77015, type: 3}
       propertyPath: m_Name
       value: furnace
@@ -2161,6 +2181,30 @@ PrefabInstance:
     - target: {fileID: 713129742304929661, guid: f02cbc98bdc35314b8a6fa45d61e8d26, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8197755953280908725, guid: f02cbc98bdc35314b8a6fa45d61e8d26, type: 3}
+      propertyPath: m_Size.x
+      value: 32.118214
+      objectReference: {fileID: 0}
+    - target: {fileID: 8197755953280908725, guid: f02cbc98bdc35314b8a6fa45d61e8d26, type: 3}
+      propertyPath: m_Size.y
+      value: 43.802273
+      objectReference: {fileID: 0}
+    - target: {fileID: 8197755953280908725, guid: f02cbc98bdc35314b8a6fa45d61e8d26, type: 3}
+      propertyPath: m_Size.z
+      value: 38.029152
+      objectReference: {fileID: 0}
+    - target: {fileID: 8197755953280908725, guid: f02cbc98bdc35314b8a6fa45d61e8d26, type: 3}
+      propertyPath: m_Center.x
+      value: 3.420186
+      objectReference: {fileID: 0}
+    - target: {fileID: 8197755953280908725, guid: f02cbc98bdc35314b8a6fa45d61e8d26, type: 3}
+      propertyPath: m_Center.y
+      value: 21.401133
+      objectReference: {fileID: 0}
+    - target: {fileID: 8197755953280908725, guid: f02cbc98bdc35314b8a6fa45d61e8d26, type: 3}
+      propertyPath: m_Center.z
+      value: 18.514582
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f02cbc98bdc35314b8a6fa45d61e8d26, type: 3}
