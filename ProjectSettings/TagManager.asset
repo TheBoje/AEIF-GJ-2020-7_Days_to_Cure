@@ -9,6 +9,7 @@ TagManager:
   - Bowl
   - Calendrier
   - Bed
+  - Pet
   layers:
   - Default
   - TransparentFX
