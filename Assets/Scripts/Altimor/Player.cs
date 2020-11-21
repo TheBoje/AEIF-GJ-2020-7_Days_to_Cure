@@ -61,6 +61,7 @@ public class Player : MonoBehaviour
                             transform.Find("UI").GetComponent<CalendrierManager>()
                                 .AfficheCalendrier();
                             _calendrierOuvert = true;
+                            UIscript.clear_open_calendrier();
                         }
                     }
                     else
@@ -74,7 +75,7 @@ public class Player : MonoBehaviour
                 }
                 else
                 {
-                    UIscript.clear_UI();
+                    UIscript.clear_open_calendrier();
                 }
             }
             else if (_calendrierOuvert && Input.GetButtonDown("Interact"))
