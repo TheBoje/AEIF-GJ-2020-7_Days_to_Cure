@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     private const float HANDLE_POSITION_Z = 0.7f;
     
     private Vector3 handlePos;
-    private Transform eyes;
+    public Transform eyes;
     private GameObject handleObject;
     private RecipientBehaviour rb;
 
@@ -19,7 +19,6 @@ public class Player : MonoBehaviour
     void Start()
     {
         handleObject = null;
-        eyes = transform.GetChild(0).transform;
         handlePos = new Vector3(HANDLE_POSITION_X, HANDLE_POSITION_Y, HANDLE_POSITION_Z);
     }
 
