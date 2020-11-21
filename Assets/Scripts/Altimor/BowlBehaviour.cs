@@ -6,7 +6,7 @@ using UnityEngine;
 public class BowlBehaviour : MonoBehaviour
 {
     [SerializeField] bool hasContent;
-    [SerializeField] private int dangerosity;
+    [SerializeField] private int averageDangerosity;
 
     private List<Color> ingredientsColors;
     private List<String> ingredientsName;
@@ -55,15 +55,18 @@ public class BowlBehaviour : MonoBehaviour
         content.GetComponent<Renderer>().material.SetColor("_Color", colorAverage);
     }
 
-    public void Fill(String name, Color color)
+    public void Fill(String name, Color color, int dangerosity)
     {
         ingredientsName.Add(name);
         ingredientsColors.Add(color);
+        averageDangerosity += dangerosity;
         ComputeColor();
         hasContent = true;
         toogleContent();
         
     }
+
+    public int AverageDangerosity => averageDangerosity;
 
     public bool IsFull()
     {

@@ -25,7 +25,7 @@ public class RecipientBehaviour : MonoBehaviour
             Debug.Log("Pourring ...");
             hasContent = false;
             content.GetComponent<MeshRenderer>().enabled = hasContent;
-            bb.Fill(name, color);
+            bb.Fill(name, color, dangerosity);
         }
     }
 }
