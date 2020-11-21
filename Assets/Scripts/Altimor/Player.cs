@@ -29,19 +29,23 @@ public class Player : MonoBehaviour
     public void GrabObject()
     {
         RaycastHit spotedObject;
-        if (Physics.Raycast(eyes.position, eyes.TransformDirection(Vector3.forward), out spotedObject,
-            GRAB_DISTANCE))
+        if (!handleObject)
         {
-            if (spotedObject.transform.CompareTag("Recipient"))
+            if (Physics.Raycast(eyes.position, eyes.TransformDirection(Vector3.forward), out spotedObject,
+                GRAB_DISTANCE))
             {
-                UIscript.draw_take(spotedObject.transform.gameObject.GetComponent<RecipientBehaviour>().ContentName);
-                if (Input.GetButtonDown("Interact"))
+                if (spotedObject.transform.CompareTag("Recipient"))
                 {
-                    handleObject = spotedObject.transform.gameObject;
-                    handleObject.transform.parent = eyes;
-                    handleObject.transform.localPosition = handlePos;
-                    handleObject.transform.rotation = Quaternion.identity;
-                    rb = handleObject.GetComponent<RecipientBehaviour>();
+                    UIscript.draw_take(spotedObject.transform.gameObject.GetComponent<RecipientBehaviour>()
+                        .ContentName);
+                    if (Input.GetButtonDown("Interact"))
+                    {
+                        handleObject = spotedObject.transform.gameObject;
+                        handleObject.transform.parent = eyes;
+                        handleObject.transform.localPosition = handlePos;
+                        handleObject.transform.rotation = Quaternion.identity;
+                        rb = handleObject.GetComponent<RecipientBehaviour>();
+                    }
                 }
             }
         }
