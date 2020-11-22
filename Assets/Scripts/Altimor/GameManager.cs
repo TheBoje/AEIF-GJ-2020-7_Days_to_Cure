@@ -11,6 +11,8 @@ using Random = System.Random;
 public class GameManager : MonoBehaviour
 {
     private const int D_NOT_BAD = 0;
+    private const int D_WEAK_COUGHT = 5;
+    private const int D_STRONG_COUGHT = 7;
     private const int D_SHIT = 10;
     private const int D_VOMIT = 15;
     private const int D_DEATH = 30;
@@ -150,7 +152,30 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            //La condition sans fin que l'on attendez tous
+            if (danger <= D_NOT_BAD)
+            {
+                effect = "Rien de spécial\n";
+            }
+            else if (danger <= D_WEAK_COUGHT)
+            {
+                effect = "Toux légère\n";
+            }
+            else if (danger <= D_STRONG_COUGHT)
+            {
+                effect = "Toux forte\n";
+            }
+            else if (danger <= D_SHIT)
+            {
+                effect = "Chiasse\n";
+            }
+            else if (danger <= D_VOMIT)
+            {
+                effect = "Vomissement\n";
+            }
+            else if (danger <= D_DEATH)
+            {
+                effect = "Mort\n";
+            }
         }
     }
 }
