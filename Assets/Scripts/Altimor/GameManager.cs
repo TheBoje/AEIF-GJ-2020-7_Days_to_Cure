@@ -18,18 +18,24 @@ public class GameManager : MonoBehaviour
 
     public static bool firstStart = true;
     private static string indications = "";
+    private static List<string> saves = new List<string>();
+    private static List<string> saveseffects = new List<string>();
     
     private const int nbIngredients = 3;
     public Dictionary<string, string> ingredients;
     private static Dictionary<string, string> solution;
     private List<string> addedIngredients;
+    private string printAddedIngredients;
+    private string effect;
     
     public TextMeshPro text;
     public GameObject player;
     public GameObject bowl;
+    public GameObject calendar;
 
     private Player playerScript;
     private BowlBehaviour bowlScript;
+    private CalendrierManager calManager;
 
     private void Awake()
     {
@@ -40,10 +46,13 @@ public class GameManager : MonoBehaviour
         
         playerScript = player.GetComponent<Player>();
         bowlScript = bowl.GetComponent<BowlBehaviour>();
+        calManager = calendar.GetComponent<CalendrierManager>();
     }
 
     private void Start()
     {
+        effect = "rien\n";
+        printAddedIngredients = "";
         addedIngredients = new List<string>();
         text.SetText(indications);
         if (firstStart)
@@ -65,6 +74,7 @@ public class GameManager : MonoBehaviour
             text.SetText(indications);
             firstStart = false;
         }
+        UpdateCalendar();
     }
 
     public void ChooseAntidote()
@@ -95,24 +105,33 @@ public class GameManager : MonoBehaviour
         indications += "Vous avez ajouté :\n";
     }
 
+    public void UpdateCalendar()
+    {
+        for(int i = 0; i < saves.Count; i++)
+        {
+            calManager.AddJour(saves[i] + saveseffects[i]);
+        }
+    }
+
     public void nextDay()
     {
         // reload la scene an gardant le game manager et le calendrier ? avec un fondu au noir ?
+        saves.Add(printAddedIngredients);
+        saveseffects.Add(effect);
         Destroy(text.gameObject);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-
+        //UpdateCalendar();
     }
 
     public void PrintIngredient(string ingredientName)
     {
+        printAddedIngredients += "- " + ingredientName + "\n";
         text.text += "- " + ingredientName + "\n";
         addedIngredients.Add(ingredientName);
     }
 
     private bool CmpSolutionIngredients()
     {
-        Debug.Log(solution);
-        Debug.Log(addedIngredients);
         for (int i = 0; i < solution.Count; i++)
         {
             if (!addedIngredients.Contains(solution.ElementAt(i).Key))

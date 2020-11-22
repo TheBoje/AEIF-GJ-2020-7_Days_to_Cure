@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
     private RecipientBehaviour rb;
     private Boolean _calendrierOuvert = false;
     private Boolean _hasDoneSomething = false;
-
+    
     // Start is called before the first frame update
     void Start()
     {
