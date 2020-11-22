@@ -28,7 +28,7 @@ public class BowlBehaviour : MonoBehaviour
         gmScript = gm.GetComponent<GameManager>();
     }
 
-    public void toogleContent()
+    public void ToogleContent()
     {
         content.GetComponent<MeshRenderer>().enabled = hasContent;
     }
@@ -68,7 +68,7 @@ public class BowlBehaviour : MonoBehaviour
         averageDangerosity += dangerosity;
         ComputeColor();
         hasContent = true;
-        toogleContent();
+        ToogleContent();
         gmScript.PrintIngredient(ingredientName);
     }
 
@@ -80,6 +80,7 @@ public class BowlBehaviour : MonoBehaviour
     {
         dailyTest = true;
         hasContent = false;
+        ToogleContent();
     }
 
     public bool DailyTested => dailyTest;

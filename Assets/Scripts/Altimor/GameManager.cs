@@ -47,6 +47,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        addedIngredients = new List<string>();
         text.SetText(indications);
         if (firstStart)
         {
@@ -126,6 +127,7 @@ public class GameManager : MonoBehaviour
     {
         int danger = bowlScript.AverageDangerosity;
         bowlScript.Pour();
+        Debug.Log("et glou et glou");
         
         if (CmpSolutionIngredients())
         {
