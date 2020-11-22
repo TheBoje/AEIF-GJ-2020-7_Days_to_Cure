@@ -74,6 +74,7 @@ public class BowlBehaviour : MonoBehaviour
         hasContent = true;
         ToogleContent();
         gmScript.PrintIngredient(ingredientName);
+        gameObject.GetComponent<AudioSource>().Play();
     }
 
     public int AverageDangerosity => averageDangerosity;
