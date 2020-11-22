@@ -5485,6 +5485,10 @@ PrefabInstance:
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 1675934127, guid: c2a1b91cea9d64b4a970ead48bac54af, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2021396130}
     - target: {fileID: 1718988023, guid: c2a1b91cea9d64b4a970ead48bac54af, type: 3}
       propertyPath: m_IsActive
       value: 0
