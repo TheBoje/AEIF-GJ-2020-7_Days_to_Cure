@@ -11,7 +11,7 @@ public class RecipientBehaviour : MonoBehaviour
     [SerializeField] private Color color;
     [SerializeField] private int dangerosity;
     public Material _baseMaterial;
-    private Material actualMetarial;
+    private Material actualMaterial;
     public GameObject content;
     [SerializeField] private bool emit = false;
     [SerializeField] private Color color_emit = Color.black;
@@ -19,22 +19,22 @@ public class RecipientBehaviour : MonoBehaviour
     
     private void Start()
     {
-        actualMetarial = new Material(_baseMaterial);
+        actualMaterial = new Material(_baseMaterial);
         content.GetComponent<MeshRenderer>().enabled = hasContent;
-        actualMetarial.color = color;
+        actualMaterial.color = color;
         if (emit)
         {
-            actualMetarial.DisableKeyword("_EMISSION");
-            actualMetarial.globalIlluminationFlags = MaterialGlobalIlluminationFlags.RealtimeEmissive;
-            actualMetarial.SetColor("_EmissionColor", color_emit * intensity);
-            actualMetarial.EnableKeyword("_EMISSION");
+            actualMaterial.DisableKeyword("_EMISSION");
+            actualMaterial.globalIlluminationFlags = MaterialGlobalIlluminationFlags.RealtimeEmissive;
+            actualMaterial.SetColor("_EmissionColor", color_emit * intensity);
+            actualMaterial.EnableKeyword("_EMISSION");
         }
         else
         {
-            actualMetarial.DisableKeyword("_EMISSION");
+            actualMaterial.DisableKeyword("_EMISSION");
         }
             
-        content.GetComponent<Renderer>().material = actualMetarial;
+        content.GetComponent<Renderer>().material = actualMaterial;
     }
 
     public Boolean CanPour()

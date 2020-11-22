@@ -4644,6 +4644,10 @@ PrefabInstance:
       propertyPath: gm
       value: 
       objectReference: {fileID: 1926771806}
+    - target: {fileID: 1408327983566702401, guid: 5a4db41ffe7f15d4d8bf351437e29dd4, type: 3}
+      propertyPath: _baseMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: b85606515a60f7647b1914f44b5b68c0, type: 2}
     - target: {fileID: 1441674885855256748, guid: 5a4db41ffe7f15d4d8bf351437e29dd4, type: 3}
       propertyPath: m_RootOrder
       value: 3
