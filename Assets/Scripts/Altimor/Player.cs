@@ -11,6 +11,9 @@ public class Player : MonoBehaviour
     private const float HANDLE_POSITION_Y = -0.2f;
     private const float HANDLE_POSITION_Z = 0.8f;
 
+    public bool isDead;
+    public bool isCured;
+
     public GameObject gm;
     public Canvas UI;
     private GameManager gmScript;
@@ -40,6 +43,8 @@ public class Player : MonoBehaviour
         UIscript = UI.GetComponent<InteractionScript>();
         gmScript = gm.GetComponent<GameManager>();
         audio = gameObject.GetComponent<AudioSource>();
+        isDead = false;
+        isCured = false;
     }
 
     public void Cought(bool strong = true)
@@ -216,8 +221,19 @@ public class Player : MonoBehaviour
                 UIscript.draw_sleep();
                 if (Input.GetButtonDown("Interact"))
                 {
-                    gmScript.nextDay();
-                    hasDoneSomething = true;
+                    if (isDead)
+                    {
+                        
+                    }
+                    else if (isCured)
+                    {
+                        
+                    }
+                    else
+                    {
+                        gmScript.nextDay();
+                        hasDoneSomething = true;
+                    }
                 }
             }
             else
