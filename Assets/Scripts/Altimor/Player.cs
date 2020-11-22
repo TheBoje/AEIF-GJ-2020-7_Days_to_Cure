@@ -25,6 +25,7 @@ public class Player : MonoBehaviour
     private RecipientBehaviour rb;
     private Boolean _calendrierOuvert = false;
 
+    public GameObject ending;
 
     public Boolean hasDoneSomething = false;
 
@@ -224,11 +225,11 @@ public class Player : MonoBehaviour
                 {
                     if (isDead)
                     {
-                        
+                        ending.GetComponent<UI_EndingScript>().LOOSE();
                     }
                     else if (isCured)
                     {
-                        
+                        ending.GetComponent<UI_EndingScript>().WIN();
                     }
                     else
                     {
