@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4104824200736772272}
   - component: {fileID: 293367164040432191}
+  - component: {fileID: 6633460837612948284}
   m_Layer: 0
   m_Name: furnace
   m_TagString: Furniture
@@ -44,8 +45,21 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 40, y: 4.228191, z: 41.00001}
-  m_Center: {x: 0, y: 36.730457, z: 0}
+  m_Size: {x: 40, y: 2.835103, z: 41.00001}
+  m_Center: {x: 0, y: 37.427048, z: 0}
+--- !u!65 &6633460837612948284
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3728016701420718602}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 34.7174, y: 1.2692661, z: 29.316864}
+  m_Center: {x: -0.4221559, y: 16.913914, z: 1.8117468}
 --- !u!65 &2932047605323944592
 BoxCollider:
   m_ObjectHideFlags: 0

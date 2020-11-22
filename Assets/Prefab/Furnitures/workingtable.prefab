@@ -75,8 +75,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 50.33413, y: 38.204453, z: 40}
-  m_Center: {x: 14.849348, y: 19.102226, z: -0.3522774}
+  m_Size: {x: 50.33415, y: 2.155316, z: 40}
+  m_Center: {x: 14.849357, y: 37.12695, z: -0.3522774}
 --- !u!65 &3150868740482033566
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -88,8 +88,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 31.613733, y: 1.3321719, z: 40}
-  m_Center: {x: -24.412085, y: 37.557564, z: -5.447986}
+  m_Size: {x: 31.613733, y: 1.3321719, z: 45.468838}
+  m_Center: {x: -24.412085, y: 37.557564, z: -2.713591}
 --- !u!65 &7139110708053239380
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -101,8 +101,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 28.140778, y: 1.0000031, z: 1}
-  m_Center: {x: -24.346897, y: 19.437618, z: 0}
+  m_Size: {x: 28.140778, y: 1.0000031, z: 21.775068}
+  m_Center: {x: -24.346897, y: 19.437618, z: 8.201268}
 --- !u!65 &2516365499922775864
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -114,8 +114,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 39.29504, y: 2.924515, z: 1}
-  m_Center: {x: -19.147516, y: 0.9622574, z: 0}
+  m_Size: {x: 39.29504, y: 2.924515, z: 31.67852}
+  m_Center: {x: -19.147516, y: 0.9622574, z: 1.0442054}
 --- !u!1 &1133337647904714352
 GameObject:
   m_ObjectHideFlags: 0
@@ -281,6 +281,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 123ec0f2737e6b247bba457447b7a339, type: 3}
       propertyPath: m_Name
       value: doorworkingtable
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 123ec0f2737e6b247bba457447b7a339, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 123ec0f2737e6b247bba457447b7a339, type: 3}
