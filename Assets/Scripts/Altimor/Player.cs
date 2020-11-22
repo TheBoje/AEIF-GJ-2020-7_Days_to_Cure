@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
     public GameObject handleObject;
     private RecipientBehaviour rb;
     private Boolean _calendrierOuvert = false;
-
+    public Boolean hasDoneSomething;
     public AudioClip drink;
     public AudioClip weakCought;
     public AudioClip strongCought;
@@ -279,7 +279,7 @@ public class Player : MonoBehaviour
                         {
                             StartCoroutine(WaitForSound(drink));
                             gmScript.Drink();
-                            _hasDoneSomething = true;
+                            hasDoneSomething = true;
                             UIscript.clear_drink();
                         }
                         else
