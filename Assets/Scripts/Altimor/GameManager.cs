@@ -103,7 +103,7 @@ public class GameManager : MonoBehaviour
 
     public void ComputeIndications()
     {
-        indications = "On sait que le virus SHRARS-32 n'aime pas : \n";
+        indications = "Après avoir mélangé vos trois ingrédients et l'avoir testé, n'oubliez pas que le remède met du temps à agir. On connait des caractéristiques du virus SHRARS-32, notamment : \n";
         foreach (var key in solution)
         {
             indications += "- " + key.Value + "\n";

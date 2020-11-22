@@ -630,6 +630,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   winCanvas: {fileID: 706557314}
   looseCanvas: {fileID: 2019694698}
+  gm: {fileID: 1926771806}
 --- !u!1 &387498994
 GameObject:
   m_ObjectHideFlags: 0
