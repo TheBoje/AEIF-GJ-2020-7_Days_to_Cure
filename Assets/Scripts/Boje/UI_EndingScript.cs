@@ -12,12 +12,14 @@ public class UI_EndingScript : MonoBehaviour
     {
         transform.gameObject.SetActive(true);
         winCanvas.gameObject.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
     }
 
     public void LOOSE()
     {
         transform.gameObject.SetActive(true);
         looseCanvas.gameObject.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
     }
     
     public void toMenu()
