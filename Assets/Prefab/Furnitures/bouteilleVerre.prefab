@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 7616459680623252436}
   m_Layer: 0
   m_Name: bouteilleVerre
-  m_TagString: Untagged
+  m_TagString: Recipient
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -145,6 +145,9 @@ MonoBehaviour:
   color: {r: 0, g: 0, b: 0, a: 0}
   dangerosity: 0
   content: {fileID: 8539595004589359619}
+  emit: 0
+  color_emit: {r: 0, g: 0, b: 0, a: 1}
+  intensity: 1
 --- !u!1 &8539595004589359619
 GameObject:
   m_ObjectHideFlags: 0
