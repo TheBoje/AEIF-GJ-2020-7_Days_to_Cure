@@ -596,7 +596,8 @@ MonoBehaviour:
     (exactement) pour boire le m\xE9lange, puis allez vous coucher. Le r\xE9sum\xE9
     du jour pr\xE9c\xE9dent est affich\xE9 sur votre calendrier (\xE0 c\xF4t\xE9
     du bureau).\n\nD\xE9pacez vous avec [ZQSD], int\xE9ragissez avec [E] et accroupissez
-    vous avec [L-CTRL]."
+    vous avec [L-CTRL].\n\nN'h\xE9sitez pas \xE0 ouvrir les portes des meubles et
+    \xE0 vous accroupir."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 87da76c479c6c2943a3e501825411649, type: 2}
   m_sharedMaterial: {fileID: -150584326852934773, guid: 87da76c479c6c2943a3e501825411649, type: 2}

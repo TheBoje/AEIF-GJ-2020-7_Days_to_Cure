@@ -10,6 +10,7 @@ public class BowlBehaviour : MonoBehaviour
     private bool hasContent;
     [SerializeField] private int averageDangerosity;
     public Material _baseMaterial;
+    private Material actualMaterial;
 
     public GameObject gm;
     private GameManager gmScript;
@@ -25,8 +26,10 @@ public class BowlBehaviour : MonoBehaviour
         //_baseMaterial = new Material(AssetDatabase.LoadAssetAtPath<Material>("Assets/Prefab/TransparentMat.mat"));
         dailyTest = false;
         hasContent = false;
+        actualMaterial = new Material(_baseMaterial);
+        actualMaterial.DisableKeyword("_EMISSION");
         content.GetComponent<MeshRenderer>().enabled = hasContent;
-        content.GetComponent<Renderer>().material = _baseMaterial;
+        content.GetComponent<Renderer>().material = actualMaterial;
         ingredientsColors = new List<Color>();
         ingredientsName = new List<string>();
         gmScript = gm.GetComponent<GameManager>();
