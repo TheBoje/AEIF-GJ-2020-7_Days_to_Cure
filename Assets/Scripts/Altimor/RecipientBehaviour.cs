@@ -12,12 +12,23 @@ public class RecipientBehaviour : MonoBehaviour
     [SerializeField] private int dangerosity;
     private Material _baseMaterial;
     public GameObject content;
+    [SerializeField] private bool emit = false;
+    [SerializeField] private Color color_emit = Color.black;
+    [SerializeField] private int intensity = 1;
     
     private void Start()
     {
         _baseMaterial = new Material(AssetDatabase.LoadAssetAtPath<Material>("Assets/Prefab/TransparentMat.mat"));
         content.GetComponent<MeshRenderer>().enabled = hasContent;
         _baseMaterial.color = color;
+        if (emit)
+        {
+            _baseMaterial.DisableKeyword("_EMISSION");
+            _baseMaterial.globalIlluminationFlags = MaterialGlobalIlluminationFlags.RealtimeEmissive;
+            _baseMaterial.SetColor("_EmissionColor", color_emit * intensity);
+            _baseMaterial.EnableKeyword("_EMISSION");
+        }
+            
         content.GetComponent<Renderer>().material = _baseMaterial;
     }
 
