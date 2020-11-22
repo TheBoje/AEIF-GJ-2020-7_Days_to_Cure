@@ -60,14 +60,10 @@ public class GameManager : MonoBehaviour
             ingredients = new Dictionary<string, string>();
             solution = new Dictionary<string, string>();
             
-            ingredients.Add("Test1", "Mmmmmh le bon test");
-            ingredients.Add("Test2", "Encore du test ?");
-            ingredients.Add("Test3", "Relou la en fait");
-            ingredients.Add("Test4", "Relou la en fait");
-            ingredients.Add("Test5", "Relou la en fait");
-            ingredients.Add("Test6", "Relou la en fait");
-            ingredients.Add("Test7", "Relou la en fait");
-            ingredients.Add("Test8", "Relou la en fait");
+            ingredients.Add("Huile usagée", "Mmmmmh le bon test");
+            ingredients.Add("Ethanol", "Encore du test ?");
+            ingredients.Add("urine", "Relou la en fait");
+            
         
             ChooseAntidote();
             ComputeIndications();
