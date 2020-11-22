@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Player : MonoBehaviour
 {
@@ -17,15 +18,15 @@ public class Player : MonoBehaviour
 
     private Vector3 handlePos;
     public Transform eyes;
-    private GameObject handleObject;
+    public GameObject handleObject;
     private RecipientBehaviour rb;
     private Boolean _calendrierOuvert = false;
-    private Boolean _hasDoneSomething = false;
+    public Boolean hasDoneSomething = false;
     
     // Start is called before the first frame update
     void Start()
     {
-        _hasDoneSomething = false;
+        hasDoneSomething = false;
         handleObject = null;
         handlePos = new Vector3(HANDLE_POSITION_X, HANDLE_POSITION_Y, HANDLE_POSITION_Z);
         UIscript = UI.GetComponent<InteractionScript>();
@@ -52,7 +53,7 @@ public class Player : MonoBehaviour
                         handleObject.transform.rotation = Quaternion.identity;
                         rb = handleObject.GetComponent<RecipientBehaviour>();
                         UIscript.clear_take();
-                        _hasDoneSomething = true;
+                        hasDoneSomething = true;
                     }
                 }
                 else if (spotedObject.transform.CompareTag("Calendrier"))
@@ -67,7 +68,7 @@ public class Player : MonoBehaviour
                                 .AfficheCalendrier();
                             _calendrierOuvert = true;
                             UIscript.clear_open_calendrier();
-                            _hasDoneSomething = true;
+                            hasDoneSomething = true;
                         }
                     }
                     else
@@ -77,7 +78,7 @@ public class Player : MonoBehaviour
                             transform.Find("UI").GetComponent<CalendrierManager>().CacheCalendrier();
                             _calendrierOuvert = false;
                             UIscript.clear_open_calendrier();
-                            _hasDoneSomething = true;
+                            hasDoneSomething = true;
                         }
                     }
                 }
@@ -93,7 +94,7 @@ public class Player : MonoBehaviour
                 _calendrierOuvert = false;
                 UIscript.clear_open_calendrier();
                 UIscript.clear_take();
-                _hasDoneSomething = true;
+                hasDoneSomething = true;
             }
             else
             {
@@ -106,7 +107,7 @@ public class Player : MonoBehaviour
             transform.Find("UI").GetComponent<CalendrierManager>().CacheCalendrier();
             _calendrierOuvert = false;
             UIscript.clear_open_calendrier();
-            _hasDoneSomething = true;
+            hasDoneSomething = true;
         }
         else
         {
@@ -116,7 +117,7 @@ public class Player : MonoBehaviour
 
     public void DropObject()
     {
-        if (handleObject && !_hasDoneSomething)
+        if (handleObject && !hasDoneSomething)
         {
             RaycastHit spotedObject;
             if (Physics.Raycast(eyes.position, eyes.TransformDirection(Vector3.forward), out spotedObject,
@@ -132,7 +133,7 @@ public class Player : MonoBehaviour
                         handleObject.transform.rotation = Quaternion.identity;
                         handleObject = null;
                         UIscript.clear_put();
-                        _hasDoneSomething = true;
+                        hasDoneSomething = true;
                     }
                 }
                 else
@@ -149,7 +150,7 @@ public class Player : MonoBehaviour
 
     public void PourObject()
     {
-        if (handleObject && !_hasDoneSomething)
+        if (handleObject && !hasDoneSomething)
         {
             RaycastHit spotedObject;
             if (Physics.Raycast(eyes.position, eyes.TransformDirection(Vector3.forward), out spotedObject,
@@ -163,7 +164,7 @@ public class Player : MonoBehaviour
                         if (Input.GetButtonDown("Interact"))
                         {
                             rb.Pouring(spotedObject.transform.gameObject);
-                            _hasDoneSomething = true;
+                            hasDoneSomething = true;
                         }
                     }
                     else
@@ -190,7 +191,7 @@ public class Player : MonoBehaviour
     public void Sleep()
     {
         RaycastHit spotedObject;
-        if (!_hasDoneSomething && Physics.Raycast(eyes.position, eyes.TransformDirection(Vector3.forward), out spotedObject,
+        if (!hasDoneSomething && Physics.Raycast(eyes.position, eyes.TransformDirection(Vector3.forward), out spotedObject,
             GRAB_DISTANCE))
         {
             if (spotedObject.transform.CompareTag("Bed"))
@@ -199,7 +200,7 @@ public class Player : MonoBehaviour
                 if (Input.GetButtonDown("Interact"))
                 {
                     gmScript.nextDay();
-                    _hasDoneSomething = true;
+                    hasDoneSomething = true;
                 }
             }
             else
@@ -217,8 +218,8 @@ public class Player : MonoBehaviour
     {
         RaycastHit spotedObject;
         
-        if (!_hasDoneSomething && Physics.Raycast(eyes.position, eyes.TransformDirection(Vector3.forward), out spotedObject,
-            GRAB_DISTANCE) && !_hasDoneSomething)
+        if (!hasDoneSomething && Physics.Raycast(eyes.position, eyes.TransformDirection(Vector3.forward), out spotedObject,
+            GRAB_DISTANCE) && !hasDoneSomething)
         {
             if (spotedObject.transform.CompareTag("Pet"))
             {
@@ -227,7 +228,7 @@ public class Player : MonoBehaviour
                 {
                     spotedObject.transform.gameObject.GetComponent<Cat>().Pet();
                     UIscript.clear_pet();
-                    _hasDoneSomething = true;
+                    hasDoneSomething = true;
                 }
             }
             else
@@ -243,7 +244,7 @@ public class Player : MonoBehaviour
 
     public void DrinkBowl()
     {
-        if (handleObject == null && !_hasDoneSomething)
+        if (handleObject == null && !hasDoneSomething)
         {
             RaycastHit spotedObject;
             if (Physics.Raycast(eyes.position, eyes.TransformDirection(Vector3.forward), out spotedObject,
@@ -258,7 +259,7 @@ public class Player : MonoBehaviour
                         {
                             gmScript.Drink();
                             gameObject.GetComponent<AudioSource>().Play();
-                            _hasDoneSomething = true;
+                            hasDoneSomething = true;
                             UIscript.clear_drink();
                         }
                         else
@@ -280,7 +281,7 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        _hasDoneSomething = false;
+        hasDoneSomething = false;
         GrabObject();
         DropObject();
         PourObject();
