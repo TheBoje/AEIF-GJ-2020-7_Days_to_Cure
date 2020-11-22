@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class BowlBehaviour : MonoBehaviour
 {
-    [SerializeField] bool hasContent;
+    private bool dailyTest;
+    private bool hasContent;
     [SerializeField] private int averageDangerosity;
 
     public GameObject gm;
@@ -19,6 +20,7 @@ public class BowlBehaviour : MonoBehaviour
     
     private void Start()
     {
+        dailyTest = false;
         hasContent = false;
         content.GetComponent<MeshRenderer>().enabled = hasContent;
         ingredientsColors = new List<Color>();
@@ -74,6 +76,14 @@ public class BowlBehaviour : MonoBehaviour
 
     public List<string> IngredientsName => ingredientsName;
 
+    public void Pour()
+    {
+        dailyTest = true;
+        hasContent = false;
+    }
+
+    public bool DailyTested => dailyTest;
+        
     public bool IsFull()
     {
         return ingredientsName.Count == 3;

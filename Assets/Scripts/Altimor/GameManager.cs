@@ -10,12 +10,19 @@ using Random = System.Random;
 
 public class GameManager : MonoBehaviour
 {
+    private const int D_NOT_BAD = 0;
+    private const int D_SHIT = 10;
+    private const int D_VOMIT = 15;
+    private const int D_DEATH = 30;
+
+
     public static bool firstStart = true;
     private static string indications = "";
     
     private const int nbIngredients = 3;
     public Dictionary<string, string> ingredients;
     private Dictionary<string, string> solution;
+    private List<string> addedIngredients;
 
     
 
@@ -101,7 +108,32 @@ public class GameManager : MonoBehaviour
     public void PrintIngredient(string ingredientName)
     {
         text.text += "- " + ingredientName + "\n";
+        addedIngredients.Add(ingredientName);
     }
-    
-    
+
+    private bool CmpSolutionIngredients()
+    {
+        for (int i = 0; i < solution.Count; i++)
+        {
+            if (!addedIngredients.Contains(solution.ElementAt(i).Key))
+                return false;
+        }
+
+        return true;
+    }
+
+    public void Drink()
+    {
+        int danger = bowlScript.AverageDangerosity;
+        bowlScript.Pour();
+        
+        if (CmpSolutionIngredients())
+        {
+            Debug.Log("Bravo c'est gagné");
+        }
+        else
+        {
+            //La condition sans fin que l'on attendez tous
+        }
+    }
 }

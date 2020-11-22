@@ -229,6 +229,33 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void DrinkBowl()
+    {
+        if (handleObject == null)
+        {
+            RaycastHit spotedObject;
+            if (Physics.Raycast(eyes.position, eyes.TransformDirection(Vector3.forward), out spotedObject,
+                GRAB_DISTANCE))
+            {
+                if (spotedObject.transform.CompareTag("Bowl"))
+                {
+                    UIscript.draw_pet();
+                    if (Input.GetButtonDown("Interact"))
+                    {
+                        if (spotedObject.transform.GetComponent<BowlBehaviour>().IsFull())
+                        {
+                            gmScript.Drink();
+                        }
+                        else
+                        {
+                            Debug.Log("Le bol n'est pas plein");
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     private void Update()
     {
         GrabObject();
@@ -236,5 +263,6 @@ public class Player : MonoBehaviour
         PourObject();
         Sleep();
         Pet();
+        DrinkBowl();
     }
 }
