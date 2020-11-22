@@ -22,9 +22,13 @@ public class Player : MonoBehaviour
     private RecipientBehaviour rb;
     private Boolean _calendrierOuvert = false;
 
+
+    public Boolean hasDoneSomething = false;
+
     public AudioClip drink;
     public AudioClip weakCought;
     public AudioClip strongCought;
+    
     private AudioSource audio;
 
     // Start is called before the first frame update
@@ -279,7 +283,7 @@ public class Player : MonoBehaviour
                         {
                             StartCoroutine(WaitForSound(drink));
                             gmScript.Drink();
-                            _hasDoneSomething = true;
+                            hasDoneSomething = true;
                             UIscript.clear_drink();
                         }
                         else
