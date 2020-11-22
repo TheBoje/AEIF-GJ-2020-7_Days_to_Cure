@@ -2441,7 +2441,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\nFait \xE0 l'occasion de la GameJam AEIF #1 sur le theme \"Virus\".\n\nCode,
     Assets et Bruitages : Vincent Commin et Louis Leenart.\nMusiques : \"Backed vibes
-    clean\" de Kevin MacLeod (libre de droit).\n\nDiscord : Altimor\r#2011 et Bo-J#2786"
+    clean\" de Kevin MacLeod (libre de droit).\n\nDiscord : Altimor#2011 et Bo-J#2786"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 87da76c479c6c2943a3e501825411649, type: 2}
   m_sharedMaterial: {fileID: -150584326852934773, guid: 87da76c479c6c2943a3e501825411649, type: 2}
