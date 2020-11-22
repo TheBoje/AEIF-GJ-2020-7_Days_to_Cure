@@ -21,11 +21,9 @@ public class GameManager : MonoBehaviour
     
     private const int nbIngredients = 3;
     public Dictionary<string, string> ingredients;
-    private Dictionary<string, string> solution;
+    private static Dictionary<string, string> solution;
     private List<string> addedIngredients;
-
     
-
     public TextMeshPro text;
     public GameObject player;
     public GameObject bowl;
@@ -37,7 +35,6 @@ public class GameManager : MonoBehaviour
     {
         DontDestroyOnLoad(this);
        
-        
         //Debug.Log(indications);
         //text.text = indications;
         
@@ -114,6 +111,8 @@ public class GameManager : MonoBehaviour
 
     private bool CmpSolutionIngredients()
     {
+        Debug.Log(solution);
+        Debug.Log(addedIngredients);
         for (int i = 0; i < solution.Count; i++)
         {
             if (!addedIngredients.Contains(solution.ElementAt(i).Key))
@@ -125,6 +124,7 @@ public class GameManager : MonoBehaviour
 
     public void Drink()
     {
+        
         int danger = bowlScript.AverageDangerosity;
         bowlScript.Pour();
         Debug.Log("et glou et glou");
