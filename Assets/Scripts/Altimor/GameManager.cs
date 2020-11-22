@@ -158,6 +158,7 @@ public class GameManager : MonoBehaviour
         if (CmpSolutionIngredients())
         {
             Debug.Log("Bravo c'est gagné");
+            playerScript.isCured = true;
         }
         else
         {
@@ -186,6 +187,7 @@ public class GameManager : MonoBehaviour
             else
             {
                 effect = "Mort\n";
+                playerScript.isDead = true;
             }
         }
     }
