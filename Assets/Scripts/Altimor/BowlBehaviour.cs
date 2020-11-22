@@ -8,6 +8,9 @@ public class BowlBehaviour : MonoBehaviour
     [SerializeField] bool hasContent;
     [SerializeField] private int averageDangerosity;
 
+    public GameObject gm;
+    private GameManager gmScript;
+
     private List<Color> ingredientsColors;
     private List<String> ingredientsName;
     
@@ -20,6 +23,7 @@ public class BowlBehaviour : MonoBehaviour
         content.GetComponent<MeshRenderer>().enabled = hasContent;
         ingredientsColors = new List<Color>();
         ingredientsName = new List<string>();
+        gmScript = gm.GetComponent<GameManager>();
     }
 
     public void toogleContent()
@@ -55,15 +59,15 @@ public class BowlBehaviour : MonoBehaviour
         content.GetComponent<Renderer>().material.SetColor("_Color", colorAverage);
     }
 
-    public void Fill(String name, Color color, int dangerosity)
+    public void Fill(string ingredientName, Color color, int dangerosity)
     {
-        ingredientsName.Add(name);
+        ingredientsName.Add(ingredientName);
         ingredientsColors.Add(color);
         averageDangerosity += dangerosity;
         ComputeColor();
         hasContent = true;
         toogleContent();
-        
+        gmScript.PrintIngredient(ingredientName);
     }
 
     public int AverageDangerosity => averageDangerosity;

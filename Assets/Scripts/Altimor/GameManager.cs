@@ -74,6 +74,8 @@ public class GameManager : MonoBehaviour
         {
             text.text += "- " + key.Value + "\n";
         }
+
+        text.text += "Vous avez ajouté :\n";
     }
 
     public void nextDay()
@@ -81,8 +83,11 @@ public class GameManager : MonoBehaviour
         // reload la scene an gardant le game manager et le calendrier ? avec un fondu au noir ?
         
     }
-    
-    
+
+    public void PrintIngredient(string ingredientName)
+    {
+        text.text += "- " + ingredientName + "\n";
+    }
     
     
 }
