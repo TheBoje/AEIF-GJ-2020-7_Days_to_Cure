@@ -62,9 +62,18 @@ public class GameManager : MonoBehaviour
             ingredients = new Dictionary<string, string>();
             solution = new Dictionary<string, string>();
             
-            ingredients.Add("Huile usagée", "Mmmmmh le bon test");
-            ingredients.Add("Ethanol", "Encore du test ?");
-            ingredients.Add("urine", "Relou la en fait");
+            ingredients.Add("Huile usagée", "Vous avez pensé à vidanger ?");
+            ingredients.Add("Ethanol", "Le virus n'est pas un alcoolique");
+            ingredients.Add("Urine", "Aucune trace du virus dans les toilettes");
+            ingredients.Add("Café", "Les informaticiens ont l'air d'être épargnés");
+            ingredients.Add("Sauce tomate", "Aucune trace de virus dans les bolognaises");
+            ingredients.Add("Eau", "Le virus n'est actif que sur la terre");
+            ingredients.Add("Lait", "Aucune trace du virus chez les vâches");
+            ingredients.Add("Jus de citron", "Aucune trace du virus dans les tartes au citron");
+            ingredients.Add("ADN", "Le virus ne touche pas aux gênes");
+            ingredients.Add("Vinaigre", "Le virus n'aime pas le vin qui a trop veilli");
+            ingredients.Add("Miel", "Le virus n'aime pas les douceurs sucrées");
+            ingredients.Add("Uranimu", "Aucune trace du virus dans les centrales nucléaires");
             
         
             ChooseAntidote();
