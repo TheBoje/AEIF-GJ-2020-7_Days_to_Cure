@@ -251,20 +251,28 @@ public class Player : MonoBehaviour
             {
                 if (spotedObject.transform.CompareTag("Bowl"))
                 {
-                    UIscript.draw_pet();
+                    UIscript.draw_drink();
                     if (Input.GetButtonDown("Interact"))
                     {
                         if (spotedObject.transform.GetComponent<BowlBehaviour>().IsFull())
                         {
                             gmScript.Drink();
                             _hasDoneSomething = true;
+                            UIscript.clear_drink();
                         }
                         else
                         {
                             Debug.Log("Le bol n'est pas plein");
                         }
                     }
+                }            else
+                {
+                    UIscript.clear_drink();
                 }
+            }
+            else
+            {
+                UIscript.clear_drink();
             }
         }
     }
