@@ -179,6 +179,7 @@ public class GameManager : MonoBehaviour
             else if (danger <= D_SHIT)
             {
                 effect = "Chiasse\n";
+                playerScript.Shit();
             }
             else if (danger <= D_VOMIT)
             {
