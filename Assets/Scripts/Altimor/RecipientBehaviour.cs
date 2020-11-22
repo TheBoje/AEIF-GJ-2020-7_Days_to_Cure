@@ -16,7 +16,6 @@ public class RecipientBehaviour : MonoBehaviour
     private void Start()
     {
         _baseMaterial = new Material(AssetDatabase.LoadAssetAtPath<Material>("Assets/Prefab/TransparentMat.mat"));
-        
         content.GetComponent<MeshRenderer>().enabled = hasContent;
         _baseMaterial.color = color;
         content.GetComponent<Renderer>().material = _baseMaterial;
