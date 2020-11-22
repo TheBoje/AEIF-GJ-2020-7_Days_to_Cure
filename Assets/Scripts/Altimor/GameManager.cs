@@ -63,6 +63,7 @@ public class GameManager : MonoBehaviour
             {
                 rand = random.Next(ingredients.Count);
             }
+            nbrs.Add(rand);
             solution.Add(ingredients.ElementAt(rand).Key, ingredients.ElementAt(rand).Value);
         }
     }
