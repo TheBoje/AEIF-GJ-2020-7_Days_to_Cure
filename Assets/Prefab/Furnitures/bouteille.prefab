@@ -225,4 +225,8 @@ MonoBehaviour:
   contentName: Eau
   color: {r: 0.2775454, g: 0.46917018, b: 0.9339623, a: 0.72156864}
   dangerosity: -10
+  _baseMaterial: {fileID: 2100000, guid: b85606515a60f7647b1914f44b5b68c0, type: 2}
   content: {fileID: 5116048855489829525}
+  emit: 0
+  color_emit: {r: 0, g: 0, b: 0, a: 1}
+  intensity: 1
