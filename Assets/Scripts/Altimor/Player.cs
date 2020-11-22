@@ -21,8 +21,12 @@ public class Player : MonoBehaviour
     public GameObject handleObject;
     private RecipientBehaviour rb;
     private Boolean _calendrierOuvert = false;
-    public Boolean hasDoneSomething = false;
-    
+
+    public AudioClip drink;
+    public AudioClip weakCought;
+    public AudioClip strongCought;
+    private AudioSource audio;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,8 +35,17 @@ public class Player : MonoBehaviour
         handlePos = new Vector3(HANDLE_POSITION_X, HANDLE_POSITION_Y, HANDLE_POSITION_Z);
         UIscript = UI.GetComponent<InteractionScript>();
         gmScript = gm.GetComponent<GameManager>();
+        audio = gameObject.GetComponent<AudioSource>();
     }
 
+    public void Cought(bool strong = true)
+    {
+        if (strong)
+            StartCoroutine(WaitForSound(strongCought));
+        else
+            StartCoroutine(WaitForSound(weakCought));
+    }
+    
     public void GrabObject()
     {
         RaycastHit spotedObject;
@@ -242,6 +255,13 @@ public class Player : MonoBehaviour
         }
     }
 
+    IEnumerator WaitForSound(AudioClip sound)
+    {
+        audio.clip = sound;
+        audio.Play();
+        yield return new WaitForSeconds(sound.length);
+    }
+
     public void DrinkBowl()
     {
         if (handleObject == null && !hasDoneSomething)
@@ -257,9 +277,9 @@ public class Player : MonoBehaviour
                     {
                         if (spotedObject.transform.GetComponent<BowlBehaviour>().IsFull())
                         {
+                            StartCoroutine(WaitForSound(drink));
                             gmScript.Drink();
-                            gameObject.GetComponent<AudioSource>().Play();
-                            hasDoneSomething = true;
+                            _hasDoneSomething = true;
                             UIscript.clear_drink();
                         }
                         else

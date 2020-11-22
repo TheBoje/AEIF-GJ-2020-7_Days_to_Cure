@@ -159,10 +159,12 @@ public class GameManager : MonoBehaviour
             else if (danger <= D_WEAK_COUGHT)
             {
                 effect = "Toux légère\n";
+                playerScript.Cought(false);
             }
             else if (danger <= D_STRONG_COUGHT)
             {
                 effect = "Toux forte\n";
+                playerScript.Cought();
             }
             else if (danger <= D_SHIT)
             {
