@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
     public AudioClip drink;
     public AudioClip weakCought;
     public AudioClip strongCought;
+    public AudioClip puke;
     
     private AudioSource audio;
 
@@ -280,6 +281,11 @@ public class Player : MonoBehaviour
         audio.clip = sound;
         audio.Play();
         yield return new WaitForSeconds(sound.length);
+    }
+
+    public void Puke()
+    {
+        StartCoroutine(WaitForSound(puke));
     }
 
     public void DrinkBowl()
