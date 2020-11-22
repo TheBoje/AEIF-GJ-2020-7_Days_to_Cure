@@ -33,6 +33,7 @@ public class Player : MonoBehaviour
     public AudioClip weakCought;
     public AudioClip strongCought;
     public AudioClip puke;
+    public AudioClip shit;
     
     private AudioSource audio;
 
@@ -287,6 +288,11 @@ public class Player : MonoBehaviour
     public void Puke()
     {
         StartCoroutine(WaitForSound(puke));
+    }
+
+    public void Shit()
+    {
+        StartCoroutine(WaitForSound(shit));
     }
 
     public void DrinkBowl()
