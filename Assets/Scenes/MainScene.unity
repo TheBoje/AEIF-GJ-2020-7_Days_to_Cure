@@ -198,6 +198,10 @@ PrefabInstance:
       propertyPath: contentName
       value: Jus de citron
       objectReference: {fileID: 0}
+    - target: {fileID: 506660350190111542, guid: c9f99dbbe8057954d94a389b6d5545f3, type: 3}
+      propertyPath: dangerosity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1063099873144358982, guid: c9f99dbbe8057954d94a389b6d5545f3, type: 3}
       propertyPath: m_Name
       value: JusCitron
@@ -239,6 +243,10 @@ PrefabInstance:
     - target: {fileID: 860777366226984858, guid: c6a996626f8508c4cb615cd549878878, type: 3}
       propertyPath: contentName
       value: urine
+      objectReference: {fileID: 0}
+    - target: {fileID: 860777366226984858, guid: c6a996626f8508c4cb615cd549878878, type: 3}
+      propertyPath: dangerosity
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5772090750483764569, guid: c6a996626f8508c4cb615cd549878878, type: 3}
       propertyPath: m_Name
@@ -661,6 +669,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: saucetomatebocale
       objectReference: {fileID: 0}
+    - target: {fileID: 4876092836050595525, guid: 4163a9e76fd264a4386a6b941fe631a5, type: 3}
+      propertyPath: dangerosity
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4163a9e76fd264a4386a6b941fe631a5, type: 3}
 --- !u!1001 &567006450
@@ -871,6 +883,10 @@ PrefabInstance:
     - target: {fileID: 4876092836050595525, guid: 4163a9e76fd264a4386a6b941fe631a5, type: 3}
       propertyPath: contentName
       value: Miel
+      objectReference: {fileID: 0}
+    - target: {fileID: 4876092836050595525, guid: 4163a9e76fd264a4386a6b941fe631a5, type: 3}
+      propertyPath: dangerosity
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4163a9e76fd264a4386a6b941fe631a5, type: 3}
@@ -1848,7 +1864,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1745558639381710544, guid: fb8a66a416584174ea78ca604b06a1c1, type: 3}
       propertyPath: dangerosity
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6152859310938774359, guid: fb8a66a416584174ea78ca604b06a1c1, type: 3}
       propertyPath: m_Name
@@ -3323,6 +3339,10 @@ PrefabInstance:
     - target: {fileID: 7325709777820159294, guid: c61ba377b0c773d44b5d03afb357f7a7, type: 3}
       propertyPath: contentName
       value: "Huile usag\xE9e"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7325709777820159294, guid: c61ba377b0c773d44b5d03afb357f7a7, type: 3}
+      propertyPath: dangerosity
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7641484930954493250, guid: c61ba377b0c773d44b5d03afb357f7a7, type: 3}
       propertyPath: m_Name

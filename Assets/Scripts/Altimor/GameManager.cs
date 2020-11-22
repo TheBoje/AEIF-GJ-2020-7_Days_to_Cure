@@ -10,11 +10,11 @@ using Random = System.Random;
 
 public class GameManager : MonoBehaviour
 {
-    private const int D_NOT_BAD = 0;
-    private const int D_WEAK_COUGHT = 5;
-    private const int D_STRONG_COUGHT = 7;
-    private const int D_SHIT = 10;
-    private const int D_VOMIT = 15;
+    private const int D_NOT_BAD = 5;
+    private const int D_WEAK_COUGHT = 10;
+    private const int D_STRONG_COUGHT = 13;
+    private const int D_SHIT = 20;
+    private const int D_VOMIT = 25;
     private const int D_DEATH = 30;
 
 
