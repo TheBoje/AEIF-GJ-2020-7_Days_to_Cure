@@ -109,7 +109,7 @@ Transform:
   m_GameObject: {fileID: 7229659771284345811}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 8.01763, y: 1, z: 2.8843575}
+  m_LocalScale: {x: 7.84, y: 1, z: 2.8843575}
   m_Children: []
   m_Father: {fileID: 9134942948618215289}
   m_RootOrder: 0
@@ -225,4 +225,8 @@ MonoBehaviour:
   contentName: 
   color: {r: 0, g: 0, b: 0, a: 0}
   dangerosity: 0
+  _baseMaterial: {fileID: 2100000, guid: b85606515a60f7647b1914f44b5b68c0, type: 2}
   content: {fileID: 7229659771284345811}
+  emit: 0
+  color_emit: {r: 0, g: 0, b: 0, a: 1}
+  intensity: 1

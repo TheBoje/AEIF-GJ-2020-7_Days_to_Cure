@@ -50,7 +50,11 @@ MonoBehaviour:
   contentName: Sauce tomate
   color: {r: 0.7735849, g: 0.20799215, b: 0.20799215, a: 1}
   dangerosity: -5
+  _baseMaterial: {fileID: 2100000, guid: b85606515a60f7647b1914f44b5b68c0, type: 2}
   content: {fileID: 8148122073813726641}
+  emit: 0
+  color_emit: {r: 0, g: 0, b: 0, a: 1}
+  intensity: 1
 --- !u!65 &815080338514362469
 BoxCollider:
   m_ObjectHideFlags: 0
