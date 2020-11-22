@@ -183,6 +183,7 @@ public class GameManager : MonoBehaviour
             else if (danger <= D_VOMIT)
             {
                 effect = "Vomissement\n";
+                playerScript.Puke();
             }
             else
             {
