@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class BowlBehaviour : MonoBehaviour
@@ -8,6 +9,7 @@ public class BowlBehaviour : MonoBehaviour
     private bool dailyTest;
     private bool hasContent;
     [SerializeField] private int averageDangerosity;
+    private Material _baseMaterial;
 
     public GameObject gm;
     private GameManager gmScript;
@@ -20,9 +22,11 @@ public class BowlBehaviour : MonoBehaviour
     
     private void Start()
     {
+        _baseMaterial = new Material(AssetDatabase.LoadAssetAtPath<Material>("Assets/Prefab/TransparentMat.mat"));
         dailyTest = false;
         hasContent = false;
         content.GetComponent<MeshRenderer>().enabled = hasContent;
+        content.GetComponent<Renderer>().material = _baseMaterial;
         ingredientsColors = new List<Color>();
         ingredientsName = new List<string>();
         gmScript = gm.GetComponent<GameManager>();
