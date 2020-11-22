@@ -15,7 +15,6 @@ public class GameManager : MonoBehaviour
     private const int D_STRONG_COUGHT = 13;
     private const int D_SHIT = 20;
     private const int D_VOMIT = 25;
-    private const int D_DEATH = 30;
 
 
     public static bool firstStart = true;
@@ -62,7 +61,7 @@ public class GameManager : MonoBehaviour
             ingredients = new Dictionary<string, string>();
             solution = new Dictionary<string, string>();
             
-            ingredients.Add("Huile usagée", "Vous avez pensé à vidanger ?");
+            ingredients.Add("Huile usagée", "Le virus n'est friand du gras, pourtant c'est la vie :(");
             ingredients.Add("Ethanol", "Le virus n'est pas un alcoolique");
             ingredients.Add("Urine", "Aucune trace du virus dans les toilettes");
             ingredients.Add("Café", "Les informaticiens ont l'air d'être épargnés");
@@ -74,6 +73,11 @@ public class GameManager : MonoBehaviour
             ingredients.Add("Vinaigre", "Le virus n'aime pas le vin qui a trop veilli");
             ingredients.Add("Miel", "Le virus n'aime pas les douceurs sucrées");
             ingredients.Add("Uranium", "Aucune trace du virus dans les centrales nucléaires");
+            ingredients.Add("Shampoing", "Si vous vous lavez les cheveux, il n'y est surement pas");
+            ingredients.Add("Jus de pomme", "Aucune trace du virus dans les vergers");
+            ingredients.Add("Lessive", "Aucune trace du virus sur les vêtements");
+            ingredients.Add("Essence", "Le seul endroit vraiment sécurisé est la station service");
+            
             
         
             ChooseAntidote();
@@ -155,7 +159,7 @@ public class GameManager : MonoBehaviour
         bowlScript.Pour();
         Debug.Log("et glou et glou");
         
-        if (CmpSolutionIngredients())
+        if (CmpSolutionIngredients() || (addedIngredients.Contains("Jus de Shrek") && addedIngredients.Contains("Eau de marais") && addedIngredients.Contains("Sueur d'Ogre")))
         {
             Debug.Log("Bravo c'est gagné");
             playerScript.isCured = true;
