@@ -590,7 +590,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: REDIGER ICI
+  m_text: "  Vous avez 7 jours pour trouver un vaccin au virus qui vous a infect\xE9
+    ! Pour cela, vous m\xE9langerez les ingr\xE9dients que vous trouverez chez vous
+    dans le bol pr\xE9sent sur la paillasse. Chaque jour, m\xE9langez 3 ingr\xE9dients
+    (exactement) pour boire le m\xE9lange, puis allez vous coucher. Le r\xE9sum\xE9
+    du jour pr\xE9c\xE9dent est affich\xE9 sur votre calendrier (\xE0 c\xF4t\xE9
+    du bureau).\n\nD\xE9pacez vous avec [ZQSD], int\xE9ragissez avec [E] et accroupissez
+    vous avec [L-CTRL]."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 87da76c479c6c2943a3e501825411649, type: 2}
   m_sharedMaterial: {fileID: -150584326852934773, guid: 87da76c479c6c2943a3e501825411649, type: 2}
@@ -617,15 +623,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 113.25
-  m_fontSizeBase: 120
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 1000
-  m_fontStyle: 17
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_fontStyle: 33
+  m_HorizontalAlignment: 8
+  m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -3009,7 +3015,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 15 days to cure
+  m_text: 7 days to cure
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 87da76c479c6c2943a3e501825411649, type: 2}
   m_sharedMaterial: {fileID: -150584326852934773, guid: 87da76c479c6c2943a3e501825411649, type: 2}
@@ -3036,7 +3042,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 46.65
+  m_fontSize: 50.1
   m_fontSizeBase: 120
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3101,7 +3107,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1800239704
 Transform:
   m_ObjectHideFlags: 0
@@ -3599,7 +3605,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2104664212
 Transform:
   m_ObjectHideFlags: 0
