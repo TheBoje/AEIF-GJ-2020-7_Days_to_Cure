@@ -183,7 +183,7 @@ public class GameManager : MonoBehaviour
             {
                 effect = "Vomissement\n";
             }
-            else if (danger <= D_DEATH)
+            else
             {
                 effect = "Mort\n";
             }
