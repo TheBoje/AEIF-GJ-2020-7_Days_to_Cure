@@ -73,7 +73,7 @@ public class GameManager : MonoBehaviour
             ingredients.Add("ADN", "Le virus ne touche pas aux gênes");
             ingredients.Add("Vinaigre", "Le virus n'aime pas le vin qui a trop veilli");
             ingredients.Add("Miel", "Le virus n'aime pas les douceurs sucrées");
-            ingredients.Add("Uranimu", "Aucune trace du virus dans les centrales nucléaires");
+            ingredients.Add("Uranium", "Aucune trace du virus dans les centrales nucléaires");
             
         
             ChooseAntidote();
