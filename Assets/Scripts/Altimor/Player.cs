@@ -223,13 +223,13 @@ public class Player : MonoBehaviour
                 UIscript.draw_sleep();
                 if (Input.GetButtonDown("Interact"))
                 {
-                    if (isDead)
-                    {
-                        ending.GetComponent<UI_EndingScript>().LOOSE();
-                    }
-                    else if (isCured)
+                    if (isCured)
                     {
                         ending.GetComponent<UI_EndingScript>().WIN();
+                    }
+                    else if (isDead || transform.Find("UI").GetComponent<CalendrierManager>().journee >= 6)
+                    {
+                        ending.GetComponent<UI_EndingScript>().LOOSE();
                     }
                     else
                     {
