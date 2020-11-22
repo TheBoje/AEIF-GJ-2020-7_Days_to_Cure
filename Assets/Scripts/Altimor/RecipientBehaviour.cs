@@ -10,7 +10,7 @@ public class RecipientBehaviour : MonoBehaviour
     [SerializeField] private String contentName;
     [SerializeField] private Color color;
     [SerializeField] private int dangerosity;
-    [SerializeField] private Material _baseMaterial;
+    private Material _baseMaterial;
     public GameObject content;
     
     private void Start()
