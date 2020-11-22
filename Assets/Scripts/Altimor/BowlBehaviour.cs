@@ -68,6 +68,8 @@ public class BowlBehaviour : MonoBehaviour
 
     public int AverageDangerosity => averageDangerosity;
 
+    public List<string> IngredientsName => ingredientsName;
+
     public bool IsFull()
     {
         return ingredientsName.Count == 3;

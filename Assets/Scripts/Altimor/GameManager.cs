@@ -16,11 +16,22 @@ public class GameManager : MonoBehaviour
     public GameObject player;
     public GameObject bowl;
 
+    private Player playerScript;
+    private BowlBehaviour bowlScript;
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(this);
+
+        playerScript = player.GetComponent<Player>();
+        bowlScript = bowl.GetComponent<BowlBehaviour>();
+    }
+
     private void Start()
     {
         ingredients = new Dictionary<string, string>();
         solution = new Dictionary<string, string>();
-        
+
         ingredients.Add("Test1", "Mmmmmh le bon test");
         ingredients.Add("Test2", "Encore du test ?");
         ingredients.Add("Test3", "Relou la en fait");
@@ -37,7 +48,7 @@ public class GameManager : MonoBehaviour
         solution.Add("Test3", "Relou la en fait");
         */
         
-        printOnTvScreen();
+        printIndicationOnTvScreen();
     }
 
     public void ChooseAntidote()
@@ -56,19 +67,22 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void printOnTvScreen()
+    public void printIndicationOnTvScreen()
     {
-        text.text = "";
+        text.text = "On sait que le virus SHRARS-32 n'aime pas : \n";
         foreach (var key in solution)
         {
-            text.text += "- " + key.Key + " : " + key.Value + "\n";
+            text.text += "- " + key.Value + "\n";
         }
     }
 
     public void nextDay()
     {
+        // reload la scene an gardant le game manager et le calendrier ? avec un fondu au noir ?
         
     }
+    
+    
     
     
 }

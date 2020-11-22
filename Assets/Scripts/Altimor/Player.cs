@@ -149,7 +149,7 @@ public class Player : MonoBehaviour
             {
                 if (spotedObject.transform.CompareTag("Bowl"))
                 {
-                    if (rb.CanPour())
+                    if (rb.CanPour() && !spotedObject.transform.GetComponent<BowlBehaviour>().IsFull())
                     {
                         UIscript.draw_add();
                         if (Input.GetButtonDown("Fire2"))
