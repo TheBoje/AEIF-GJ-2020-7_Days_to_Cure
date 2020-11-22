@@ -257,6 +257,7 @@ public class Player : MonoBehaviour
                         if (spotedObject.transform.GetComponent<BowlBehaviour>().IsFull())
                         {
                             gmScript.Drink();
+                            gameObject.GetComponent<AudioSource>().Play();
                             _hasDoneSomething = true;
                             UIscript.clear_drink();
                         }
